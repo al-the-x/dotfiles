@@ -8,3 +8,7 @@ svn_repo ( )
 {
 	svn info $1 | grep Root | sed -r 's/^.*: //'
 } ## END svn_repo
+
+if [ !`which editor` ]; then
+    export EDITOR=`which vim`
+fi
