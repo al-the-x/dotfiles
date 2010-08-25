@@ -12,3 +12,5 @@ svn_repo ( )
 if [ !`which editor` ]; then
     export EDITOR=`which vim`
 fi
+
+alias can-has="apt-get"

@@ -6,3 +6,5 @@
 	token = df0af630d2c749b147fbb0b250b55fe4
 [color]
 	ui = true
+[alias]
+    st = status
