@@ -3,12 +3,13 @@ syntax on
 set tabstop=4 
 set shiftwidth=4 
 set expandtab 
-set autoindent 
+set smartindent 
 set number
 set foldmethod=indent
 
-nmap <C-h> <C-w>h
-nmap <C-l> <C-w>l
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-
+nmap <C-H> <C-W>h
+nmap <C-L> <C-W>l
+nmap <C-J> <C-W>j
+nmap <C-K> <C-W>k
+nmap <C-W><C-A> :set columns=240<CR>
+nmap <C-W><C-Z> :set columns=120<CR>
