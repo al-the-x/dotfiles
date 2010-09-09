@@ -13,3 +13,4 @@
     aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | grep -v '^alias' | sed -E -e 's/\\s/ = /'
     st = status
 	br = branch
+	co = checkout
