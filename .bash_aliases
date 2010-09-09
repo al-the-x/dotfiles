@@ -1,3 +1,6 @@
+#!/bin/bash
+
+export DEPLOYMENT=local
 
 ##
  # The svn_repo() function returns the repository root URL of the provided
