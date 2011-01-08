@@ -12,6 +12,11 @@ svn_repo ( )
 	svn info $1 | grep Root | sed -r 's/^.*: //'
 } ## END svn_repo
 
+psql_proc ( )
+{
+    psql $@ -c 'SELECT "procpid", "current_query", (now() - "query_start") as "runtime" FROM "pg_stat_activity";'
+}
+
 if [ !`which editor` ]; then
     export EDITOR=`which vim`
 fi
