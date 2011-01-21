@@ -14,3 +14,4 @@
     st = status
 	br = branch
 	co = checkout
+	squash = rebase -i --autosquash
