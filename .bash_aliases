@@ -17,3 +17,8 @@ if [ !`which editor` ]; then
 fi
 
 alias can-has="apt-get"
+
+alias manage="./project/manage.py"
+
+alias activate="source ./bin/activate"
+
