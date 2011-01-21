@@ -94,7 +94,7 @@ alias l='ls -CF'
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-BASH_COMPLETION_PATHS="/etc /usr/local /opt/local"
+BASH_COMPLETION_PATHS="/etc /usr/local/etc /opt/local/etc"
 
 for BASH_COMPLETION_PATH in $BASH_COMPLETION_PATHS; do
     if [ -f "$BASH_COMPLETION_PATH/bash_completion" ]; then
