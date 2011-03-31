@@ -8,6 +8,7 @@ set number
 set foldmethod=indent
 set ignorecase
 set smartcase
+set colorcolumn=80
 
 nmap <C-H> <C-W>h
 nmap <C-L> <C-W>l
