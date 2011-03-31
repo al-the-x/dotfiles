@@ -1,3 +1,5 @@
+[core]
+    excludesfile = ~/.gitignore
 [user]
     name = David Rogers
     email = david@ethos-development.com
@@ -13,6 +15,4 @@
     br = branch
     co = checkout
     squash = rebase -i --autosquash
-
-[core]
-    excludesfile = ~/.gitignore
+    sq = !git squash
