@@ -1,3 +1,20 @@
+## Mac metadata
 .DS_Store
+
+## Subversion metadata
 .svn/
+
+## Vim metadata
 *.sw[po]
+*.vim
+
+## Eclipse metadata
+.buildpath
+.project
+.settings
+
+## Python compiled/optimized
+*.py[co]
+
+## Apache metadata (project-level only)
+/.htaccess
