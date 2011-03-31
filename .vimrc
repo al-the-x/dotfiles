@@ -10,6 +10,8 @@ set ignorecase
 set smartcase
 set colorcolumn=80
 
+map! <F1> <Nop>
+
 nmap <C-H> <C-W>h
 nmap <C-L> <C-W>l
 nmap <C-J> <C-W>j
