@@ -6,6 +6,8 @@ set expandtab
 set smartindent 
 set number
 set foldmethod=indent
+set ignorecase
+set smartcase
 
 nmap <C-H> <C-W>h
 nmap <C-L> <C-W>l
