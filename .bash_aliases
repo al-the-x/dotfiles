@@ -17,7 +17,7 @@ psql_proc ( )
     psql $@ -c 'SELECT "procpid", "current_query", (now() - "query_start") as "runtime" FROM "pg_stat_activity";'
 }
 
-if [ ! $(which editor) ]; then
+if [[ ! $(which editor) ]]; then
     export EDITOR=$(which vim)
 fi
 
