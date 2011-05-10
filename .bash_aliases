@@ -21,6 +21,8 @@ if [[ ! $(which editor) ]]; then
     export EDITOR=$(which vim)
 fi
 
+alias tmux="tmux -f ~/.tmuxrc"
+
 alias can-has="apt-get"
 
 alias manage="./project/manage.py"
