@@ -1,5 +1,7 @@
 syntax on
 
+colorscheme desert
+
 set tabstop=4 
 set shiftwidth=4 
 set expandtab 
@@ -27,3 +29,5 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
 
+"" ALWAYS remove trailing whitespace
+autocmd BufWritePre * %s/\s\+$//e
