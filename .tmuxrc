@@ -1,5 +1,6 @@
 # Custom tmux configuration: ~/.tmux.conf
 # Cobbled together from google and trial & error by Eric Marden (xentek.net)
+# Heavily modified by David Rogers (@al-the-x)
 
 # set the command prefix to match gnuscreen (i.e. CTRL+a)
 set -g prefix C-a
@@ -32,4 +33,4 @@ setw -g monitor-activity on
 set-window-option -g automatic-rename off
 
 # reload changes in tmux, handy
-bind r source-file ~/.tmux.conf
+bind r source-file ~/.tmuxrc
