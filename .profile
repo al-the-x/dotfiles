@@ -8,6 +8,14 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+if [[ ! $TMUX || ! $TERM == 'screen' ]]; then
+    TMUX=$(which tmux && echo -f ~/.tmuxrc)
+
+    if [[ ! $TMUX == '' ]]; then
+        $TMUX attach || $TMUX
+    fi
+fi
+
 LOCAL_PATHS="/usr/local /opt/local $HOME"
 
 for LOCAL_PATH in $LOCAL_PATHS; do
