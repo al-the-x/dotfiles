@@ -22,13 +22,13 @@ for LOCAL_PATH in $LOCAL_PATHS; do
     fi
 done
 
-if [[ $(which tmux) ]] && tmux -f ~/.tmuxrc start-server; then
-    if [[ ! $SSH_CONNECTION ]]; then
-        tmux source-file ~/.tmuxrc.local
-    fi
+if [[ $(which tmux) ]]; then
+    tmux="$(which tmux) -f $HOME/.tmuxrc"
 
-    if [[ ! ($TERM == 'screen' || $TERM == 'tmux') ]]; then
-        tmux attach-session || tmux new-session
+    [[ ! "$SSH_CONNECTION" ]] && tmux="$(which tmux) -f $HOME/.tmuxrc.local"
+
+    if [[ ! ($TERM == 'screen') ]]; then
+        $tmux attach-session || $tmux new-session
     fi
 fi
 

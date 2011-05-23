@@ -2,7 +2,15 @@
  # Local tmux configuration, mostly so that the "prefix" / "send-prefix" bindings
  # don't collide with the same on remote servers.
 ##
+source-file ~/.tmuxrc
+
+# use a different prefix locally
 set-option -g prefix C-l
+
+# set "send-prefix" to match the new prefix
 bind-key C-l send-prefix
+
+# ditch the old "send-prefix" binding
 unbind-key C-a
+
 
