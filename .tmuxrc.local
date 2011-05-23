@@ -1,0 +1,8 @@
+###
+ # Local tmux configuration, mostly so that the "prefix" / "send-prefix" bindings
+ # don't collide with the same on remote servers.
+##
+set-option -g prefix C-l
+bind-key C-l send-prefix
+unbind-key C-a
+

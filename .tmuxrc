@@ -1,10 +1,16 @@
-# Custom tmux configuration: ~/.tmux.conf
-# Cobbled together from google and trial & error by Eric Marden (xentek.net)
-# Heavily modified by David Rogers (@al-the-x)
+###
+ # Custom tmux configuration cobbled together from google and trial & error
+ # by Eric Marden (xentek.net), heavily modified by David Rogers (@al-the-x).
+##
 
 # set the command prefix to match gnuscreen (i.e. CTRL+a)
-set -g prefix C-a
-bind-key C-a last-window
+set-option -g prefix C-a
+
+# use the NEW prefix key to "send-prefix" instead of the default
+unbind-key C-b; bind-key C-a send-prefix
+
+# bound to C-a by default
+bind-key C-w last-window
 
 # utf8
 set-window-option -g utf8 on
@@ -33,4 +39,4 @@ setw -g monitor-activity on
 set-window-option -g automatic-rename off
 
 # reload changes in tmux, handy
-bind r source-file ~/.tmuxrc
+bind-key r source-file ~/.tmuxrc
