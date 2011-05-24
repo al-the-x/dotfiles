@@ -22,16 +22,6 @@ for LOCAL_PATH in $LOCAL_PATHS; do
     fi
 done
 
-if [[ $(which tmux) ]]; then
-    tmux="$(which tmux) -f $HOME/.tmuxrc"
-
-    [[ ! "$SSH_CONNECTION" ]] && tmux="$(which tmux) -f $HOME/.tmuxrc.local"
-
-    if [[ ! ($TERM == 'screen') ]]; then
-        $tmux attach-session || $tmux new-session
-    fi
-fi
-
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists

@@ -102,3 +102,13 @@ for BASH_COMPLETION_PATH in $BASH_COMPLETION_PATHS; do
     fi
 done
 
+if [[ $(which tmux) ]]; then
+    tmux="$(alias tmux || $(which tmux) -f ~/.tmuxrc)"
+
+    [[ ! "$SSH_CONNECTION" ]] && tmux="$(which tmux) -f $HOME/.tmuxrc.local"
+
+    if [[ ! ($TERM == 'screen') ]]; then
+        $tmux attach-session || $tmux new-session
+    fi
+fi
+
