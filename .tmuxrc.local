@@ -13,4 +13,6 @@ bind-key C-l send-prefix
 # ditch the old "send-prefix" binding
 unbind-key C-a
 
+# rebind the "reload" key with the correct rc file
+bind-key r source-file ~/.tmuxrc.local
 
