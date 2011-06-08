@@ -10,7 +10,10 @@ set-option -g prefix C-a
 unbind-key C-b; bind-key C-a send-prefix
 
 # bound to C-a by default
-bind-key C-w last-window
+bind-key C-w last-window; bind-key w last-window
+
+# to be more screen-friendly...
+bind-key C-c new-window; bind-key c new-window
 
 # utf8
 set-window-option -g utf8 on
@@ -20,23 +23,33 @@ set-option -g status-fg white
 set-option -g status-bg black
 
 # set the current window name to a nice bold yellow text
-setw -g window-status-current-attr bold
-setw -g window-status-current-fg yellow
+set-window-option -g window-status-current-attr bold
+set-window-option -g window-status-current-fg yellow
 
 # hostname is printed on the left, uptime and current load on the right
 set-option -g status-left-length 40
-set -g status-left "#H"
-set -g status-right "#(uptime|cut -d "," -f 2-)"
+set-option -g status-left "#H"
+set-option -g status-right "#(uptime|cut -d "," -f 2-)"
+
+# make the key bindings work like VIM
+set-option -g status-keys vi
+set-window-option -g mode-keys vi
 
 # fix the titles
 set -g set-titles on
 set -g set-titles-string "#I:#W"
 
 # be notified when there is activity in one of your windows
-setw -g monitor-activity on
+set-window-option -g monitor-activity on
 
 # don't rename windows automatically
 set-window-option -g automatic-rename off
 
 # reload changes in tmux, handy
 bind-key r source-file ~/.tmuxrc
+
+# make the split panes more mnemonic
+unbind-key '"'; unbind-key %
+bind-key | split-window -h; bind-key C-| split-window -h
+bind-key _ split-window -v; bind-key C-_ cplit-window -v
+
