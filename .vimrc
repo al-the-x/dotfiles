@@ -2,10 +2,10 @@ syntax on
 
 colorscheme desert
 
-set tabstop=4 
-set shiftwidth=4 
-set expandtab 
-set smartindent 
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
 set number
 set foldmethod=indent
 set ignorecase
@@ -29,5 +29,30 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
 
-"" ALWAYS remove trailing whitespace
-autocmd BufWritePre * %s/\s\+$//e
+"""
+ " Execute a :s[earch] without clobbering the search register, with all the
+ " regular features of the command.
+ ""
+function! SafeSearch( line1, line2, cmd )
+    let r = @/
+    execute a:line1 . ',' . a:line2 . a:cmd
+    let @/ = r
+endfunction
+
+"" Map ":Sa[feSearch]" to the "SafeSearch" function for convenience...
+command! -range -nargs=* SafeSearch call SafeSearch(<line1>, <line2>, 's' . <q-args>)
+
+"""
+ " Trim any trailing whitespace from a file just before saving it.
+ ""
+function! TrimTrailingWhitespace( line1, line2 )
+    execute a:line1 . ',' . a:line2 . 'SafeSearch/\s\+$//e'
+endfunction
+
+"" Map ":Trim" to the "TrimTrailingWhitespace" function for convenience...
+command! -range Trim call TrimTrailingWhitespace(<line1>, <line2>)
+
+"" ALWAYS remove trailing whitespace when saving a file...
+augroup FIXUP
+    autocmd! BufWritePre * Trim
+augroup END
