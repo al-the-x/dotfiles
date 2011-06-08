@@ -31,15 +31,25 @@ set-option -g status-left-length 40
 set-option -g status-left "#H"
 set-option -g status-right "#(uptime|cut -d "," -f 2-)"
 
+# make the key bindings work like VIM
+set-option -g status-keys vi
+set-window-option -g mode-keys vi
+
 # fix the titles
 set -g set-titles on
 set -g set-titles-string "#I:#W"
 
 # be notified when there is activity in one of your windows
-setw -g monitor-activity on
+set-window-option -g monitor-activity on
 
 # don't rename windows automatically
 set-window-option -g automatic-rename off
 
 # reload changes in tmux, handy
 bind-key r source-file ~/.tmuxrc
+
+# make the split panes more mnemonic
+unbind-key '"'; unbind-key %
+bind-key | split-window -h; bind-key C-| split-window -h
+bind-key _ split-window -v; bind-key C-_ cplit-window -v
+
