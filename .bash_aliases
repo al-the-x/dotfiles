@@ -29,3 +29,4 @@ alias manage="./project/manage.py"
 
 alias activate="source ./bin/activate"
 
+alias gvims="gvim --servername $(basename $PWD) --remote-tab-silent"
