@@ -1,0 +1,14 @@
+# bound to C-a by default
+bind-key C-w last-window; bind-key w last-window
+
+# to be more screen-friendly...
+bind-key C-c new-window; bind-key c new-window
+
+# reload changes in tmux, handy
+bind-key r source-file ~/.tmuxrc
+
+# make the split panes more mnemonic
+unbind-key '"'; unbind-key %
+bind-key | split-window -h
+bind-key _ split-window -v
+

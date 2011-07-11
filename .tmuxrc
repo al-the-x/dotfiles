@@ -6,15 +6,6 @@
 # set the command prefix to match gnuscreen (i.e. CTRL+a)
 set-option -g prefix C-a
 
-# use the NEW prefix key to "send-prefix" instead of the default
-unbind-key C-b; bind-key C-a send-prefix
-
-# bound to C-a by default
-bind-key C-w last-window; bind-key w last-window
-
-# to be more screen-friendly...
-bind-key C-c new-window; bind-key c new-window
-
 # utf8
 set-window-option -g utf8 on
 
@@ -48,8 +39,6 @@ set-window-option -g automatic-rename off
 # reload changes in tmux, handy
 bind-key r source-file ~/.tmuxrc
 
-# make the split panes more mnemonic
-unbind-key '"'; unbind-key %
-bind-key | split-window -h; bind-key C-| split-window -h
-bind-key _ split-window -v; bind-key C-_ cplit-window -v
+# load the key bindings
+source-file ~/.tmuxrc.keys
 
