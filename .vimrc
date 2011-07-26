@@ -11,6 +11,7 @@ set foldmethod=indent
 set ignorecase
 set smartcase
 set colorcolumn=80
+set laststatus=2
 
 map! <F1> <Nop>
 
@@ -54,5 +55,5 @@ command! -range Trim call TrimTrailingWhitespace(<line1>, <line2>)
 
 "" ALWAYS remove trailing whitespace when saving a file...
 augroup FIXUP
-    autocmd! BufWritePre * Trim
+    autocmd! BufWritePre * %Trim
 augroup END
