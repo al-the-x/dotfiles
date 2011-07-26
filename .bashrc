@@ -5,6 +5,17 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+# If tmux is available, execute that first...
+if [[ $(which tmux) ]]; then
+    tmux="$(which tmux) -f ~/.tmuxrc"
+
+    [[ ! "$SSH_CONNECTION" ]] && tmux="$(which tmux) -f $HOME/.tmuxrc.local"
+
+    if [[ ! ($TERM == 'screen') || ! "$TMUX" ]]; then
+        $tmux attach-session || $tmux new-session
+    fi
+fi
+
 # don't put duplicate lines in the history. See bash(1) for more options
 # don't overwrite GNU Midnight Commander's setting of `ignorespace'.
 export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
@@ -101,14 +112,4 @@ for BASH_COMPLETION_PATH in $BASH_COMPLETION_PATHS; do
         . "$BASH_COMPLETION_PATH/bash_completion"
     fi
 done
-
-if [[ $(which tmux) ]]; then
-    tmux="$(alias tmux || $(which tmux) -f ~/.tmuxrc)"
-
-    [[ ! "$SSH_CONNECTION" ]] && tmux="$(which tmux) -f $HOME/.tmuxrc.local"
-
-    if [[ ! ($TERM == 'screen') ]]; then
-        $tmux attach-session || $tmux new-session
-    fi
-fi
 
