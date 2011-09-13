@@ -9,18 +9,19 @@ set-option -g prefix C-a
 # utf8
 set-window-option -g utf8 on
 
-# statusbar background to black, foreground to white
-set-option -g status-fg white
-set-option -g status-bg black
-
 # set the current window name to a nice bold yellow text
 set-window-option -g window-status-current-attr bold
 set-window-option -g window-status-current-fg yellow
 
+# statusbar background to black, foreground to white
+set-option -g status-fg white
+set-option -g status-bg "#333333"
+
 # hostname is printed on the left, uptime and current load on the right
 set-option -g status-left-length 40
-set-option -g status-left "#H"
-set-option -g status-right "#(uptime|cut -d "," -f 2-)"
+set-option -g status-left "#[fg=#999999]#(echo $USER)#[default] @ #[fg=green]#H#[default] ::"
+set-option -g status-left-attr bold
+set-option -g status-right "%Y-%m-%d %H:%M"
 
 # make the key bindings work like VIM
 set-option -g status-keys vi

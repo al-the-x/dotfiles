@@ -12,3 +12,4 @@ unbind-key '"'; unbind-key %
 bind-key | split-window -h
 bind-key _ split-window -v
 
+bind-key '"' command-prompt "rename-window %%"
