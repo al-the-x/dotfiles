@@ -5,6 +5,11 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+# If gsed is available, use that instead (MacOSX)...
+if [[ $(which gsed) ]]; then
+    alias sed=$(which gsed)
+fi
+
 # If tmux is available, execute that first...
 if [[ $(which tmux) ]]; then
     tmux="$(which tmux) -f ~/.tmuxrc"
