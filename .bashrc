@@ -12,10 +12,13 @@ fi
 
 # If tmux is available, execute that first...
 if [[ $(which tmux) ]]; then
-    tmux="$(which tmux) -f ~/.tmuxrc"
+    ## I use a non-standard config file, of course...
+    tmux="$(which tmux) -f $HOME/.tmuxrc"
 
+    ## If there's no $SSH_CONNECTION active, I must be local...
     [[ ! "$SSH_CONNECTION" ]] && tmux="$(which tmux) -f $HOME/.tmuxrc.local"
 
+    ## If we're not already in a screen/tmux session, try to attach to one or create one...
     if [[ ! ($TERM == 'screen') || ! "$TMUX" ]]; then
         $tmux attach-session || $tmux new-session
     fi
