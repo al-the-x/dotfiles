@@ -26,7 +26,12 @@ mysql_proc ( )
     mysql $@ -e 'SHOW FULL PROCESSLIST'
 }
 
-[[ "$(which editor)" ]] || export EDITOR=$(which vim)
+
+## If VIM is available, always use that as my editor. ALWAYS.
+if [[ "$(which vim)" ]]; then
+    export EDITOR=$(which vim)
+    alias editor=$EDITOR
+fi
 
 alias tmux="tmux -f ~/.tmuxrc"
 
@@ -34,5 +39,5 @@ alias can-has="apt-get"
 
 alias activate="source ./bin/activate"
 
-alias gvims="gvim --servername $(basename $PWD) --remote-tab-silent"
+alias gvims='gvim --servername $(basename $PWD) --remote-tab-silent'
 
