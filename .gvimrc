@@ -1,8 +1,7 @@
 colorscheme darkblue
 
-"" VIM resizes to the screen height / width.
-set lines=100
-set columns=120
+set fuoptions=maxvert,maxhorz
+set guifont=Monaco:h10
 
 "" Hate that toolbar...! >_<
 set guioptions-=T
