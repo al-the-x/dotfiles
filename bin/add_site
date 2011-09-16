@@ -1,0 +1,20 @@
+#!/bin/bash
+
+if [[ $# < 1 ]]; then
+    echo 'Available:'
+    ls -1d ~/Sites/*.local | xargs basename | xargs -n1 echo \*
+    echo
+    echo 'Already in /etc/hosts:'
+    echo
+    grep -v localhost /etc/hosts
+    exit
+fi
+
+address=$([[ "$2" ]] && echo $2 || echo '127.0.0.1')
+
+hostname="$1"
+
+echo "Adding $hostname ($address)..."
+
+sudo -s "echo $address $1 >> /etc/hosts"
+
