@@ -22,6 +22,8 @@ for LOCAL_PATH in $LOCAL_PATHS; do
     fi
 done
 
+PATH="./bin:$PATH"
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
