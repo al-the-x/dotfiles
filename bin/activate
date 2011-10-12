@@ -1,3 +1,0 @@
-if [[ "$TMUX" && "$SSH_CONNECTION" ]]; then
-    eval $(tmux showenv | grep -v ^- | sed -e 's/=\(.\+\)/="\1"/' -e 's/^/export /')
-fi
