@@ -16,3 +16,5 @@
     co = checkout
     squash = rebase -i --autosquash
     sq = !git squash
+[merge]
+	ff = only
