@@ -69,9 +69,30 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    function prompt
+    {
+        local color="tput setaf"
+
+        local NONE=$(tput sgr0)
+        local BOLD=$(tput bold)
+
+        local BLACK=$($color 0)
+        local RED=$($color 1)
+        local GREEN=$($color 2)
+        local YELLOW=$($color 3)
+        local BLUE=$($color 4)
+        local MAGENTA=$($color 5)
+        local CYAN=$($color 6)
+        local WHITE=$($color 7)
+
+        PS1='${debian_chroot:+$(debian_chroot)}'
+        PS1+="$BOLD$BLUE"'\u'"$NONE @ $CYAN"'\h '"$NONE($YELLOW"'\j'"$NONE) : "
+        PS1+="$MAGENTA"'$(dirname "$PWD")/'"$BOLD"'$(basename "$PWD")'"$NONE\n"
+        PS1+="$RED\$> $NONE"
+    }
+    prompt
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\u @ \h (\j): $PWD\n\$> '
 fi
 unset color_prompt force_color_prompt
 
