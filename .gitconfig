@@ -16,5 +16,6 @@
     co = checkout
     squash = rebase -i --autosquash
     sq = !git squash
+    la = !LESS=$LESS'S' git log --oneline --graph --decorate
 [merge]
 	ff = only
