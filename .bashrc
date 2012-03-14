@@ -87,7 +87,7 @@ if [ "$color_prompt" = yes ]; then
 
         PS1='${debian_chroot:+$(debian_chroot)}'
         PS1+='\['$BOLD$BLUE'\]\u\['$NONE'\] @ \['$CYAN'\]\h \['$NONE'\](\['$YELLOW'\]\j\['$NONE'\]) : '
-        PS1+='\['$MAGENTA'\]$(dirname "$PWD")/\['$BOLD'\]$(basename "$PWD")\['$NONE'\]\n'
+        PS1+='\['$MAGENTA'\]$(dirname "${PWD/$HOME\//~/}")/\['$BOLD'\]$(basename "$PWD")\['$NONE'\]\n'
         PS1+='\['$RED'\]\$>\['$NONE'\] '
     }
     prompt
