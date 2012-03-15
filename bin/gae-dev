@@ -1,0 +1,24 @@
+#!/bin/bash
+
+PYTHON=$(which python2.5)
+
+if [[ ! "$PYTHON" ]]; then
+    echo Is Python 2.5 installed? >&2
+    exit 1
+fi
+
+MODULE=$(which dev_appserver.py)
+
+if [[ ! "$MODULE" ]]; then
+    echo "Is Google App Engine installed?" >&2
+    exit 1
+fi
+
+HOSTNAME=$(basename $PWD)
+
+if [[ ! $(grep $HOSTNAME /etc/hosts) ]]; then
+    echo "Is $HOSTNAME in /etc/hosts?" >&2
+    exit 1
+fi
+
+$PYTHON $MODULE -a $HOSTNAME $@ $PWD/app/
