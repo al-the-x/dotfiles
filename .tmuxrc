@@ -37,9 +37,6 @@ set-window-option -g monitor-activity on
 # don't rename windows automatically
 set-window-option -g automatic-rename off
 
-# reload changes in tmux, handy
-bind-key r source-file ~/.tmuxrc
-
 # load the key bindings
 source-file ~/.tmuxrc.keys
 
