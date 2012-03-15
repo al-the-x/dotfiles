@@ -1,20 +1,7 @@
-## Mac metadata
-.DS_Store
+## Any kind of history files: .bash_history, .mysql_history, etc.
+.*[-_]history
+.*hst
 
-## Subversion metadata
-.svn/
+## Any subdirectory of $HOME
+*/
 
-## Vim metadata
-*.sw[po]
-*.vim
-
-## Eclipse metadata
-.buildpath
-.project
-.settings
-
-## Python compiled/optimized
-*.py[co]
-
-## Apache metadata (project-level only)
-/.htaccess

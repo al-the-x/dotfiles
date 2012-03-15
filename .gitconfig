@@ -1,5 +1,5 @@
 [core]
-    excludesfile = ~/.gitignore
+    excludesfile = ~/.gitexcludes
 [user]
     name = David Rogers
     email = david@ethos-development.com
