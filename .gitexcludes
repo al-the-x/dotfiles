@@ -18,3 +18,6 @@
 
 ## Apache metadata (project-level only)
 /.htaccess
+
+## Scratch files for various languages
+scratch.*
