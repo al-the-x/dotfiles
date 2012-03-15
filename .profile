@@ -8,7 +8,7 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
-LOCAL_PATHS="/usr/local /opt/local $HOME"
+LOCAL_PATHS="/usr/local /opt/local $HOME $HOME/.rbenv"
 
 for LOCAL_PATH in $LOCAL_PATHS; do
     # set PATH so it includes $LOCAL_PATH/bin, if it exists
@@ -21,6 +21,8 @@ for LOCAL_PATH in $LOCAL_PATHS; do
         MANPATH="$LOCAL_PATH/share/man:$MAN_PATH"
     fi
 done
+
+eval "$(rbenv init -)"
 
 PATH="./bin:$PATH"
 
