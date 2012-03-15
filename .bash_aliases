@@ -58,6 +58,8 @@ alias tmux="tmux -f ~/.tmuxrc"
 ## For da LOLZ...
 alias can-has="apt-get"
 
+alias virtualenv="virtualenv --prompt='# '"
+
 ## Activate the (Python) virtualenv wrapper, if it exists...
 alias activate="source ./bin/activate"
 

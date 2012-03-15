@@ -85,10 +85,11 @@ if [ "$color_prompt" = yes ]; then
         local CYAN=$($color 6)
         local WHITE=$($color 7)
 
-        PS1='${debian_chroot:+$(debian_chroot)}'
+        PS1='\n'
         PS1+='\['$BOLD$BLUE'\]\u\['$NONE'\] @ \['$CYAN'\]\h \['$NONE'\](\['$YELLOW'\]\j\['$NONE'\]) : '
         PS1+='\['$MAGENTA'\]$(dirname "${PWD/$HOME\//~/}")/\['$BOLD'\]$(basename "$PWD")\['$NONE'\]\n'
-        PS1+='\['$RED'\]\$>\['$NONE'\] '
+        PS1+='${debian_chroot:+$(debian_chroot)}\n'
+        PS1+='${VIRTUAL_ENV:+"(`basename "$VIRTUAL_ENV"`) "}\['$RED'\]\$>\['$NONE'\] '
     }
     prompt
 else
