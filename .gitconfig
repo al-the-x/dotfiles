@@ -17,5 +17,6 @@
     squash = rebase -i --autosquash
     sq = !git squash
     la = !LESS=$LESS'S' git log --oneline --graph --decorate
+    pulls = !git pull $@ && git submodule update --init
 [merge]
 	ff = only
