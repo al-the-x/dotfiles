@@ -14,5 +14,5 @@ bind-key C-l send-prefix
 unbind-key C-a
 
 # rebind the "reload" key with the correct rc file
-bind-key r source-file ~/.tmuxrc.local
+bind-key C-r source-file ~/.tmuxrc.local
 
