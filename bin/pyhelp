@@ -5,13 +5,16 @@ words = sys.argv; words.pop(0)
 
 for word in words:
     try:
+        help(word) # simplest case
+    except NameError: # not a builtin or global
         try:
-            __import__(word)
-        except ImportError: # not a module...
-            module, _ = word.rsplit('.', 1)
-            __import__(module)
+            try:
+                __import__(word)
+            except ImportError: # not a module...
+                module, _ = word.rsplit('.', 1)
+                __import__(module)
 
-        help(word)
-    except ImportError:
-        print('Cannot find "%s" to import!' % word)
+            help(word)
+        except ImportError:
+            print('Cannot find "%s" to import!' % word)
 
