@@ -1,22 +1,43 @@
-[core]
-    excludesfile = ~/.gitexcludes
+###
+ # My personal preference is to type less, so many of my config options involve
+ # making git smarter about my default choices and aliasing lengthy, oft-used
+ # commands with shorter, more mnemonic ones. I'm lazy, what can I say...
+ #
+ # @author David Rogers <al.the.x@gmail.com>
+ ##
 [user]
+    ## Default identification... Remember to change this for work projects!
     name = David Rogers
-    email = david@ethos-development.com
-[github]
-    user = al-the-x
-    token = df0af630d2c749b147fbb0b250b55fe4
+    email = al.the.x@gmail.com
+[core]
+    ## Use a global excludesfile for ignore patterns across repos...
+    excludesfile = ~/.gitexcludes
 [color]
     ui = true
 [alias]
-    alias = !sh -c '[[ $1 && $2 ]] && git config --global alias.\"$1\" \"$2\" && exit 0 || echo \"usage: git alias <new alias> <original command>\" >&2 && exit 1' -
+    ## Show all configured aliases...
     aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | grep -v '^alias' | sed -E -e 's/\\s/ = /'
-    st = status
+
+    ## Much more descriptive, IMO...
+    squash = rebase -i --autosquash
+
+    ## Easier to type...
+    st = status -s
     br = branch
     co = checkout
-    squash = rebase -i --autosquash
     sq = !git squash
-    la = !LESS=$LESS'S' git log --oneline --graph --decorate
+
+    ## Similar to the `lola` aliases out there, but more mnemonic for me:
+    ll = !LESS=$LESS'S' git log --oneline --graph --decorate
+    la = !LESS=$LESS'S' git log --oneline --graph --decorate --all
+
+    ## Like "git superpull" but less to type...
     pulls = !git pull $@ && git submodule update --init
 [merge]
+    ## No moar merge bubbles, plz. Kthxbai!
 	ff = only
+
+    ## So `git merge` works with the upstream branch by default...
+    defaultToUpstream = true
+[github]
+    user = al-the-x
