@@ -15,6 +15,7 @@ set ignorecase
 set smartcase
 set colorcolumn=80
 set laststatus=2
+set backspace=2
 
 map! <F1> <Nop>
 
