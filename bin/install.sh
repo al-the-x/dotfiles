@@ -12,6 +12,6 @@ GITHUB="git@github.com:al-the-x/Bash_Profiles.git"
     $GIT remote add origin $GITHUB &&
     $GIT remote show origin &&
     $GIT pull origin master &&
-    $GIT submodules update --init
+    $GIT submodule update --init
 )
 
