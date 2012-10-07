@@ -13,7 +13,7 @@
     ## Use a global excludesfile for ignore patterns across repos...
     excludesfile = ~/.gitexcludes
 [color]
-    ui = true
+	ui = always
 [alias]
     ## Show all configured aliases...
     aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | grep -v '^alias' | sed -E -e 's/\\s/ = /'
