@@ -5,6 +5,29 @@ export DEPLOYMENT=local
 export LESS="RX"
 
 ###
+ # Useful function for setting $PS1 with human-readable variables.
+prompt ( )
+{
+    [ $# > 0 ] || return
+
+    color="tput setaf"
+
+    local NONE=$(tput sgr0)
+    local BOLD=$(tput bold)
+
+    local BLACK=$($color 0)
+    local RED=$($color 1)
+    local GREEN=$($color 2)
+    local YELLOW=$($color 3)
+    local BLUE=$($color 4)
+    local MAGENTA=$($color 5)
+    local CYAN=$($color 6)
+    local WHITE=$($color 7)
+
+    eval "echo \"$@\""
+}
+
+###
  # The svn_repo() function returns the repository root URL of the provided
  # working copy, assuming "./" if omitted. This is useful for svn < 1.6.x,
  # which doesn't implement the "^/" shortcut for repository URLs.
