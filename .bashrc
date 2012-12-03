@@ -126,4 +126,8 @@ for BASH_COMPLETION_PATH in $BASH_COMPLETION_PATHS; do
     fi
 done
 
+if [ -d "$HOME/.bash_completion.d" ]; then
+    . $HOME/.bash_completion.d/*
+fi
+
 PS1=$(prompt "$PS1")
