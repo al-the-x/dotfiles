@@ -33,9 +33,9 @@
 
     ## Like "git superpull" but less to type...
     pulls = !git pull $@ && git submodule update --init
+	retire = "!f() { [ \"$#\" = \"2\" ] || echo \"usage: git retire <remote> <branch>\" && exit 1; echo \"git br -d $2 && git push --delete $1 $2\"; }; f"
 [merge]
     ## No moar merge bubbles, plz. Kthxbai!
-	ff = only
 
     ## So `git merge` works with the upstream branch by default...
     defaultToUpstream = true
