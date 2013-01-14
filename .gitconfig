@@ -22,7 +22,7 @@
     squash = rebase -i --autosquash
 
     ## Easier to type...
-    st = status -s
+	st = status -suno
     br = branch
     co = checkout
     sq = !git squash
@@ -41,3 +41,5 @@
     defaultToUpstream = true
 [github]
     user = al-the-x
+[push]
+	default = upstream
