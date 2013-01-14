@@ -5,9 +5,6 @@ bind-key C-r source-file ~/.tmuxrc
 bind-key l last-window
 bind-key ; last-panel
 
-# to match the prefix key
-bind-key C-a send-prefix; unbind-key C-b
-
 # name the window by default, C-c to bypass
 bind-key c command-prompt "new-window -n %%"; bind-key C-c new-window
 
@@ -18,3 +15,9 @@ bind-key _ split-window -v
 
 # more like screen
 bind-key '"' command-prompt "rename-window %%"; unbind-key ','
+
+# to match the prefix key
+bind-key C-a send-prefix; unbind-key C-b
+
+# because I regularly get screen-size locked by zombie sessions
+bind-key C-x attach -d
