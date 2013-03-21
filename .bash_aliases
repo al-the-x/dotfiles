@@ -8,7 +8,7 @@ export LESS="RX"
  # Useful function for setting $PS1 with human-readable variables.
 prompt ( )
 {
-    [ $# > 0 ] || return
+    [[ ($# > 0) ]] || return
 
     color="tput setaf"
 
