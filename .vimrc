@@ -16,6 +16,7 @@ set smartcase
 set colorcolumn=80
 set laststatus=2
 set backspace=2
+set formatoptions+=rol
 
 map! <F1> <Nop>
 
