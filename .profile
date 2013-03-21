@@ -34,3 +34,4 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
+[[ -s /home/al_the_x/.nvm/nvm.sh ]] && . /home/al_the_x/.nvm/nvm.sh # This loads NVM
