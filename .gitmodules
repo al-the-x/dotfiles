@@ -1,6 +1,3 @@
-[submodule ".vim/bundle/conque-term"]
-	path = .vim/bundle/conque-term
-	url = https://github.com/rosenfeld/conque-term.git
 [submodule ".vim/bundle/textile.vim"]
 	path = .vim/bundle/textile.vim
 	url = https://github.com/timcharper/textile.vim
@@ -31,6 +28,6 @@
 [submodule ".rbenv"]
 	path = .rbenv
 	url = git://github.com/sstephenson/rbenv.git
-[submodule ".vim/bundle/vim-creole"]
-	path = .vim/bundle/vim-creole
-	url = https://github.com/vim-scripts/vim-creole.git
+[submodule ".vim/bundle/syntastic"]
+	path = .vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
