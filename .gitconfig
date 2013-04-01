@@ -43,3 +43,5 @@
     user = al-the-x
 [push]
 	default = upstream
+[include]
+	path = ~/.gitcredentials
