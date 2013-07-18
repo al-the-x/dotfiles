@@ -3,7 +3,7 @@ bind-key C-r source-file ~/.tmuxrc
 
 # bound to C-a by default
 bind-key l last-window
-bind-key ; last-panel
+bind-key \; last-pane
 
 # name the window by default, C-c to bypass
 bind-key c command-prompt "new-window -n %%"; bind-key C-c new-window
