@@ -13,7 +13,7 @@
     ## Use a global excludesfile for ignore patterns across repos...
     excludesfile = ~/.gitexcludes
 [color]
-	ui = always
+    ui = always
 [alias]
     ## Show all configured aliases...
     aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | grep -v '^alias' | sed -E -e 's/\\s/ = /'
@@ -22,7 +22,7 @@
     squash = rebase -i --autosquash
 
     ## Easier to type...
-	st = status -suno
+    st = status -suno
     br = branch
     co = checkout
     sq = !git squash
@@ -33,7 +33,8 @@
 
     ## Like "git superpull" but less to type...
     pulls = !git pull $@ && git submodule update --init
-	retire = "!f() { [ \"$#\" = \"2\" ] || echo \"usage: git retire <remote> <branch>\" && exit 1; echo \"git br -d $2 && git push --delete $1 $2\"; }; f"
+    retire = "!f() { [ \"$#\" = \"2\" ] || echo \"usage: git retire <remote> <branch>\" && exit 1; echo \"git branch -d $2 && git push --delete $1 $2\"; }; f"
+    ignore = "!for arg in $@; do echo $arg >> .gitignore; done"
 [merge]
     ## No moar merge bubbles, plz. Kthxbai!
 
@@ -42,6 +43,6 @@
 [github]
     user = al-the-x
 [push]
-	default = upstream
+    default = upstream
 [include]
-	path = ~/.gitcredentials
+    path = ~/.gitcredentials
