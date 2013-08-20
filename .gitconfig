@@ -33,9 +33,18 @@
 
     ## Like "git superpull" but less to type...
     pulls = !git pull $@ && git submodule update --init
-    retire = "!f() { [ \"$#\" = \"2\" ] || echo \"usage: git retire <remote> <branch>\" && exit 1; echo \"git branch -d $2 && git push --delete $1 $2\"; }; f"
+
+    ## Remove a local AND remote branch, if successfully merged to HEAD...
+    retire = "!f(){ [ ! \"$#\" = \"2\" ] && (echo \"usage: git retire <remote> <branch>\" && exit 1) || (git branch -d $2 && git push --delete $1 $2); } && f"
+
+    ## Add to the local ignore list... Need refactor into full git-command to support "--global" and "--repo"
     ignore = "!for arg in $@; do echo $arg >> .gitignore; done"
+
+    ## Find the ref(s) corresponding to HEAD programatically...
+	where = !git symbolic-ref -q HEAD | sed 's|refs/heads/||'
+
 [merge]
+    ff = only
     ## No moar merge bubbles, plz. Kthxbai!
 
     ## So `git merge` works with the upstream branch by default...
