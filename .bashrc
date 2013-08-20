@@ -71,7 +71,7 @@ fi
 if [ "$color_prompt" = yes ]; then
     PS1='\n'
     PS1+='\[$BOLD$BLUE\]\u\[$NONE\] @ \[$CYAN\]\h \[$NONE\](\[$YELLOW\]\j\[$NONE\]) : '
-    PS1+='\[$MAGENTA\]\$(dirname "\${PWD/\$HOME\//~/}")/\[$BOLD\]\$(basename "\$PWD")\[$NONE\]\n'
+    PS1+='\[$MAGENTA\]\$(dirname "\${PWD/\$HOME\//~}")/\[$BOLD\]\$(basename "\$PWD")\[$NONE\]\n'
     PS1+='\${debian_chroot:+\$(debian_chroot)}\n'
     PS1+='\[$GREEN\]\$(__git_ps1 \"[%s]\") '
     PS1+='\[$RED\]\\\$>\[$NONE\] '
