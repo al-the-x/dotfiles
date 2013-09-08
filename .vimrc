@@ -35,6 +35,7 @@ autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType md set shiftwidth=2 filetype=markdown
+autocmd FileType crontab set nobackup nowritebackup
 
 """
  " Execute a :s[earch] without clobbering the search register, with all the
