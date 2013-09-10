@@ -88,3 +88,4 @@ alias activate="source ./bin/activate"
 
 ## Give git Github-enabled superpowers...
 alias git=hub
+alias rb=rbenv
