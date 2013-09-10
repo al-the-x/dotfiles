@@ -42,6 +42,7 @@
 
     ## Find the ref(s) corresponding to HEAD programatically...
 	where = !git symbolic-ref -q HEAD | sed 's|refs/heads/||'
+	stu = status -su
 
 [merge]
     ff = only
