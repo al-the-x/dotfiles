@@ -1,3 +1,6 @@
+[submodule ".rbenv"]
+	path = .rbenv
+	url = git://github.com/sstephenson/rbenv.git
 [submodule ".vim/bundle/textile.vim"]
 	path = .vim/bundle/textile.vim
 	url = https://github.com/timcharper/textile.vim
@@ -25,18 +28,15 @@
 [submodule ".vim/bundle/vim-unimpaired"]
 	path = .vim/bundle/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
-[submodule ".rbenv"]
-	path = .rbenv
-	url = git://github.com/sstephenson/rbenv.git
-[submodule ".vim/bundle/syntastic"]
-	path = .vim/bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
 [submodule ".vim/bundle/vim-obsession"]
 	path = .vim/bundle/vim-obsession
 	url = git://github.com/tpope/vim-obsession.git
 [submodule ".vim/bundle/vim-dispatch"]
 	path = .vim/bundle/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch.git
+[submodule ".vim/bundle/syntastic"]
+	path = .vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
 [submodule ".vim/bundle/emmet-vim"]
 	path = .vim/bundle/emmet-vim
 	url = git://github.com/mattn/emmet-vim.git
