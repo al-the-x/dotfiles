@@ -81,11 +81,14 @@ alias tmux="tmux -f ~/.tmuxrc"
 ## For da LOLZ...
 alias can-has="apt-get"
 
-alias virtualenv="virtualenv --prompt='# '"
-
 ## Activate the (Python) virtualenv wrapper, if it exists...
 alias activate="source ./bin/activate"
 
 ## Give git Github-enabled superpowers...
 alias git=hub
+
 alias rb=rbenv
+
+alias json="python -m json.tool"
+alias httpd="python -m SimpleHTTPServer"
+>>>>>>> I thought I had these aliases defined already.
