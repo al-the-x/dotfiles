@@ -1,9 +1,9 @@
 #!/bin/bash
 
-PYTHON=$(which python2.5)
+PYTHON=$(which python2.7)
 
 if [[ ! "$PYTHON" ]]; then
-    echo Is Python 2.5 installed? >&2
+    echo Is Python 2.7 installed? >&2
     exit 1
 fi
 
@@ -21,4 +21,4 @@ if [[ ! $(grep $HOSTNAME /etc/hosts) ]]; then
     exit 1
 fi
 
-$PYTHON $MODULE -a $HOSTNAME $@ $PWD/app/
+$PYTHON $MODULE --host $HOSTNAME $@ $PWD/app/
