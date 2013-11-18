@@ -1,9 +1,14 @@
 #!/usr/bin/env python
+__doc__ = """
+usage: pyhelp [WORDS]
+
+    WORDS: One or more modules, functions, or objects that can be supplied
+            to the `help()` function.
+"""
+
 import sys
 
-words = sys.argv; words.pop(0)
-
-for word in words:
+for word in sys.argv[1:]:
     try:
         help(word) # simplest case
     except NameError: # not a builtin or global
@@ -17,4 +22,5 @@ for word in words:
             help(word)
         except ImportError:
             print('Cannot find "%s" to import!' % word)
-
+else:
+    print __doc__
