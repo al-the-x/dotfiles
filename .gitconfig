@@ -38,7 +38,7 @@
     retire = "!f(){ [ ! \"$#\" = \"2\" ] && (echo \"usage: git retire <remote> <branch>\" && exit 1) || (git branch -d $2 && git push --delete $1 $2); } && f"
 
     ## Add to the local ignore list... Need refactor into full git-command to support "--global" and "--repo"
-    ignore = "!for arg in $@; do echo $arg >> .gitignore; done"
+    ignore = "!f(){ for arg in $@; do echo $arg >> .gitignore; done } && f"
 
     ## Find the ref(s) corresponding to HEAD programatically...
 	where = !git symbolic-ref -q HEAD | sed 's|refs/heads/||'
