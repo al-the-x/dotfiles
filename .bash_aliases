@@ -91,4 +91,3 @@ alias rb=rbenv
 
 alias json="python -m json.tool"
 alias httpd="python -m SimpleHTTPServer"
->>>>>>> I thought I had these aliases defined already.
