@@ -40,3 +40,5 @@ set-window-option -g automatic-rename off
 # load the key bindings
 source-file ~/.tmuxrc.keys
 
+# load Darwin (Mac OSX) specific config
+if-shell 'test $(uname | tr [A-Z] [a-z]) = "darwin"' 'source-file ~/.tmuxrc.darwin'
