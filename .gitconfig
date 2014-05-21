@@ -16,13 +16,15 @@
     ui = always
 [alias]
     ## Show all configured aliases...
-    aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | grep -v '^alias' | sed -E -e 's/\\s/ = /'
+	aliases = !git config --get-regexp \"alias\\.\"
 
     ## Much more descriptive, IMO...
     squash = rebase -i --autosquash
+	conflicts = diff --name-only --diff-filter=U
 
     ## Easier to type...
-    st = status -suno
+	st = status -suno
+	stu = status -su
     br = branch
     co = checkout
     sq = !git squash
@@ -42,7 +44,9 @@
 
     ## Find the ref(s) corresponding to HEAD programatically...
 	where = !git symbolic-ref -q HEAD | sed 's|refs/heads/||'
-	stu = status -su
+
+    ## Github-related: see https://github.com/github/hub
+	pr = !hub pull-request
 
 [merge]
     ff = only
