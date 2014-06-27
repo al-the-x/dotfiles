@@ -8,7 +8,7 @@ colorscheme desert
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set smartindent
+set cindent
 set number
 set foldmethod=indent
 set ignorecase
