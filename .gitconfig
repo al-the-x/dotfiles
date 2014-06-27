@@ -47,6 +47,9 @@
 
     ## Github-related: see https://github.com/github/hub
 	pr = !hub pull-request
+	which = branch --contains
+	wh = branch --contains
+	push-all = push --follow-tags --all
 
 [merge]
     ff = only
