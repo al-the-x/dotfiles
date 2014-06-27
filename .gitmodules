@@ -49,3 +49,6 @@
 [submodule ".vim/bundle/ctrlp.vim"]
 	path = .vim/bundle/ctrlp.vim
 	url = git://github.com/kien/ctrlp.vim.git
+[submodule "/Users/al_the_x/.vim/bundle/vimwiki"]
+	path = /Users/al_the_x/.vim/bundle/vimwiki
+	url = git://github.com/vimwiki/vimwiki.git
