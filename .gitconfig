@@ -63,3 +63,9 @@
     default = upstream
 [include]
     path = ~/.gitcredentials
+[gitflow "feature.finish"]
+	keepremote = true
+[gitflow "hotfix.finish"]
+	keepremote = true
+[gitflow "release.finish"]
+	keepremote = true
