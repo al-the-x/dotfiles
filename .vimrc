@@ -37,6 +37,8 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType md set shiftwidth=2 filetype=markdown
 autocmd FileType crontab set nobackup nowritebackup
 
+let g:vimwiki_list=[{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md' }]
+
 """
  " Execute a :s[earch] without clobbering the search register, with all the
  " regular features of the command.
