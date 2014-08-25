@@ -90,4 +90,9 @@ alias git=hub
 alias rb=rbenv
 
 alias json="python -m json.tool"
+
 alias httpd="python -m SimpleHTTPServer"
+
+if which colordiff 2>&1 1>/dev/null; then
+    alias diff=$(which colordiff)
+fi
