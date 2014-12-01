@@ -5,3 +5,5 @@
 ## Any subdirectory of $HOME
 */
 .viminfo
+.zcompdump
+.zcompdump.zwc
