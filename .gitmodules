@@ -27,7 +27,7 @@
 	url = https://github.com/tpope/vim-unimpaired.git
 [submodule ".vim/bundle/vim-obsession"]
 	path = .vim/bundle/vim-obsession
-	url = git://github.com/tpope/vim-obsession.git
+	url = https://github.com/tpope/vim-obsession.git
 [submodule ".vim/bundle/vim-dispatch"]
 	path = .vim/bundle/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch.git
@@ -36,16 +36,16 @@
 	url = https://github.com/scrooloose/syntastic.git
 [submodule ".vim/bundle/emmet-vim"]
 	path = .vim/bundle/emmet-vim
-	url = git://github.com/mattn/emmet-vim.git
+	url = https://github.com/mattn/emmet-vim.git
 [submodule ".vim/bundle/vim-vinegar"]
 	path = .vim/bundle/vim-vinegar
-	url = git://github.com/tpope/vim-vinegar.git
+	url = https://github.com/tpope/vim-vinegar.git
 [submodule ".vim/bundle/vim-ragtag"]
 	path = .vim/bundle/vim-ragtag
-	url = git://github.com/tpope/vim-ragtag.git
+	url = https://github.com/tpope/vim-ragtag.git
 [submodule ".vim/bundle/ctrlp.vim"]
 	path = .vim/bundle/ctrlp.vim
-	url = git://github.com/kien/ctrlp.vim.git
+	url = https://github.com/kien/ctrlp.vim.git
 [submodule "/Users/al_the_x/.vim/bundle/vimwiki"]
-	path = /Users/al_the_x/.vim/bundle/vimwiki
-	url = git://github.com/vimwiki/vimwiki.git
+	path = .vim/bundle/vimwiki
+	url = https://github.com/vimwiki/vimwiki.git
