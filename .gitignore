@@ -1,7 +1,6 @@
 ## Any kind of history files: .bash_history, .mysql_history, etc.
-.*[-_]history
+.*history
 .*hst
 
 ## Any subdirectory of $HOME
 */
-
