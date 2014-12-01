@@ -49,3 +49,6 @@
 [submodule "/Users/al_the_x/.vim/bundle/vimwiki"]
 	path = .vim/bundle/vimwiki
 	url = https://github.com/vimwiki/vimwiki.git
+[submodule ".zprezto"]
+	path = .zprezto
+	url = git://github.com/al-the-x/prezto.git
