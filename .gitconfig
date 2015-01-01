@@ -14,7 +14,7 @@
     excludesfile = ~/.gitexcludes
 	editor = vim
 [color]
-    ui = always
+	ui = auto
 [alias]
     ## Show all configured aliases...
 	aliases = !git config --get-regexp \"alias\\.\"
