@@ -1,0 +1,3 @@
+#!/usr/bin/env zsh
+
+curl -ns https://api.github.com/${1/^\/} | jq --color-output ${2:=.} | less
