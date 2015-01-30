@@ -1,3 +1,9 @@
-#!/usr/bin/env zsh -x
+#!/usr/bin/env zsh
 
-curl -ns ${@[3,-1]} https://api.github.com/${1/^\/} | jq --color-output ${2:=.} | less
+if [ -t 1 ]; then
+  JQFLAGS='-C'
+fi
+
+$(which curl) -ns ${@[3,-1]} https://api.github.com/${1/#\//} \
+  | $(which jq) $JQFLAGS ${2:=.} \
+  | $(which less)
