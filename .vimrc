@@ -5,8 +5,8 @@ syntax on
 
 colorscheme desert
 
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set cindent
 set number
@@ -34,7 +34,7 @@ autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType md set shiftwidth=2 filetype=markdown
+autocmd FileType md set filetype=markdown
 autocmd FileType crontab set nobackup nowritebackup
 
 let g:vimwiki_list=[{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md' }]
