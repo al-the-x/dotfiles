@@ -3,6 +3,8 @@
 .*hst
 
 ## Any subdirectory of $HOME
-*/
+/[A-Z]*
+
+## Random info files...
 .viminfo
 .zcompdump*
