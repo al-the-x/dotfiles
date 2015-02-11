@@ -18,15 +18,19 @@ set laststatus=2
 set backspace=2
 set formatoptions+=rol
 
+"" Make `<C-A>` increment alphabetic characters
+set nrformats+=alpha
+
+"" Kill the help key...
 map! <F1> <Nop>
 
+"" Faster panel switching...
 nmap <C-H> <C-W>h
 nmap <C-L> <C-W>l
 nmap <C-J> <C-W>j
 nmap <C-K> <C-W>k
-nmap <C-W><C-A> :set columns=240<CR>
-nmap <C-W><C-Z> :set columns=120<CR>
 
+"" Setup autocomplete...
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType ruby set omnifunc=rubycomplete#Complete
 autocmd FileType python set omnifunc=pythoncomplete#Complete
@@ -34,15 +38,20 @@ autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+
+"" Map extension `.md` to Markdown instead of default...
 autocmd FileType md set filetype=markdown
+
+"" To work with crontab files...
 autocmd FileType crontab set nobackup nowritebackup
 
+"" Settings for http://github.com/vim-scripts/vimwiki
 let g:vimwiki_list=[{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md' }]
 
-"""
- " Execute a :s[earch] without clobbering the search register, with all the
- " regular features of the command.
- ""
+""
+" Execute a :s[earch] without clobbering the search register, with all the
+" regular features of the command.
+""
 function! SafeSearch( line1, line2, cmd )
     let r = @/
     execute a:line1 . ',' . a:line2 . a:cmd
