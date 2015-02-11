@@ -1,9 +1,7 @@
 #!/usr/bin/env zsh
 
-if [ -t 1 ]; then
-  $(which curl) -ns ${@[3,-1]} https://api.github.com/${1/#\//} \
-    | $(which jq) -C ${2:=.} | LESS="$LESS"' -r' $(which less)
-else
-  $(which curl) -ns ${@[3,-1]} https://api.github.com/${1/#\//} \
-    | $(which jq) ${2:=.}
-fi
+$(which curl) -ns ${@[3,-1]} https://api.github.com/${1/#\//} | $(which jq) -C ${2:=.} | \
+  if [ -t 1 ]; then
+    LESS="$LESS"' -r' $(which less)
+  fi
+
