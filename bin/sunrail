@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+
+IP=$(ifconfig en0 | ggrep 'inet ' | gsed -re 's/(([0-9]{1,3}\.){3})([0-9]{1,3})/\11/' | gawk '{print $2}')
+
+curl -XPOST -H 'Content-length: 0' -I $IP/cgi-bin/startFreeInternetSession.sh
