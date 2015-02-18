@@ -5,6 +5,9 @@
 ## Any subdirectory of $HOME
 /[A-Z]*
 
+## Most hidden directories...
+/.*/
+
 ## Random info files...
 .viminfo
 .zcompdump*
