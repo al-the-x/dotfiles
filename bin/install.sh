@@ -6,7 +6,7 @@ if [[ -z $(which git) ]]; then
 fi
 
 GIT="$(which git) --git-dir=$HOME/.git --work-tree=$HOME"
-GITHUB="git@github.com:al-the-x/Bash_Profiles.git"
+GITHUB="git@github.com:al-the-x/dotfiles.git"
 
 (   $GIT init &&
     $GIT remote add origin $GITHUB &&
