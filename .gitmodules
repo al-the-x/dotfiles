@@ -52,3 +52,6 @@
 [submodule ".zprezto"]
 	path = .zprezto
 	url = git://github.com/al-the-x/prezto.git
+[submodule ".vim/bundle/github-issues.vim"]
+	path = .vim/bundle/github-issues.vim
+	url = git://github.com/jaxbot/github-issues.vim.git

@@ -58,6 +58,7 @@
 
     ## So `git merge` works with the upstream branch by default...
     defaultToUpstream = true
+	tool = vimdiff
 [github]
     user = al-the-x
 [push]
@@ -70,3 +71,5 @@
 	keepremote = true
 [gitflow "release.finish"]
 	keepremote = true
+[diff]
+	tool = vimdiff
