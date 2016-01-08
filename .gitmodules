@@ -55,3 +55,9 @@
 [submodule ".vim/bundle/github-issues.vim"]
 	path = .vim/bundle/github-issues.vim
 	url = git://github.com/jaxbot/github-issues.vim.git
+[submodule ".vim/bundle/editorconfig-vim"]
+	path = .vim/bundle/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim.git
+[submodule ".tmux/plugins/tpm"]
+	path = .tmux/plugins/tpm
+	url = git://github.com/tmux-plugins/tpm.git
