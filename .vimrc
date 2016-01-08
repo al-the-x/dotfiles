@@ -75,3 +75,17 @@ command! -range Trim call TrimTrailingWhitespace(<line1>, <line2>)
 augroup FIXUP
     autocmd! BufWritePre * %Trim
 augroup END
+
+"""
+ " Extract the links from a buffer and return them as a List
+ ""
+function! ExtractLinks()
+  let LINKS=[ ]
+  substitute(getline(1,$),
+    'https?://[\w\.-]\+[/\w\d-\.%]\+',
+    \=len(add(LINKS, submatch(0))) ? submatch(0) : '',
+  'ge')
+  if len(LINKS)
+    put =LINKS
+  endif
+endfunction
