@@ -7,8 +7,8 @@
  ##
 [user]
     ## Default identification... Remember to change this for work projects!
-    name = David Rogers
-    email = al.the.x@gmail.com
+	name = David Rogers
+	email = hello@al-the-x.me
 [core]
     ## Use a global excludesfile for ignore patterns across repos...
     excludesfile = ~/.gitexcludes
