@@ -1,66 +1,63 @@
-[submodule ".vim/bundle/textile.vim"]
-	path = .vim/bundle/textile.vim
-	url = https://github.com/timcharper/textile.vim
-[submodule ".vim/bundle/vim-commentary"]
-	path = .vim/bundle/vim-commentary
-	url = https://github.com/tpope/vim-commentary.git
-[submodule ".vim/bundle/vim-eunuch"]
-	path = .vim/bundle/vim-eunuch
-	url = https://github.com/tpope/vim-eunuch.git
-[submodule ".vim/bundle/vim-fugitive"]
-	path = .vim/bundle/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive.git
-[submodule ".vim/bundle/vim-markdown"]
-	path = .vim/bundle/vim-markdown
-	url = https://github.com/tpope/vim-markdown.git
-[submodule ".vim/bundle/vim-pathogen"]
-	path = .vim/bundle/vim-pathogen
-	url = https://github.com/tpope/vim-pathogen.git
-[submodule ".vim/bundle/vim-repeat"]
-	path = .vim/bundle/vim-repeat
-	url = https://github.com/tpope/vim-repeat.git
-[submodule ".vim/bundle/vim-surround"]
-	path = .vim/bundle/vim-surround
-	url = https://github.com/tpope/vim-surround.git
-[submodule ".vim/bundle/vim-unimpaired"]
-	path = .vim/bundle/vim-unimpaired
-	url = https://github.com/tpope/vim-unimpaired.git
-[submodule ".vim/bundle/vim-obsession"]
-	path = .vim/bundle/vim-obsession
-	url = https://github.com/tpope/vim-obsession.git
-[submodule ".vim/bundle/vim-dispatch"]
-	path = .vim/bundle/vim-dispatch
-	url = https://github.com/tpope/vim-dispatch.git
-[submodule ".vim/bundle/syntastic"]
-	path = .vim/bundle/syntastic
+[submodule "home/.vim/bundle/textile.vim"]
+	path = home/.vim/bundle/textile.vim
+	url = https://github.com/timcharper/textilehome/.vim
+[submodule "home/.vim/bundle/vim-commentary"]
+	path = home/.vim/bundle/vim-commentary
+	url = https://github.com/tpopehome/.vim-commentary.git
+[submodule "home/.vim/bundle/vim-eunuch"]
+	path = home/.vim/bundle/vim-eunuch
+	url = https://github.com/tpopehome/.vim-eunuch.git
+[submodule "home/.vim/bundle/vim-fugitive"]
+	path = home/.vim/bundle/vim-fugitive
+	url = https://github.com/tpopehome/.vim-fugitive.git
+[submodule "home/.vim/bundle/vim-markdown"]
+	path = home/.vim/bundle/vim-markdown
+	url = https://github.com/tpopehome/.vim-markdown.git
+[submodule "home/.vim/bundle/vim-pathogen"]
+	path = home/.vim/bundle/vim-pathogen
+	url = https://github.com/tpopehome/.vim-pathogen.git
+[submodule "home/.vim/bundle/vim-repeat"]
+	path = home/.vim/bundle/vim-repeat
+	url = https://github.com/tpopehome/.vim-repeat.git
+[submodule "home/.vim/bundle/vim-surround"]
+	path = home/.vim/bundle/vim-surround
+	url = https://github.com/tpopehome/.vim-surround.git
+[submodule "home/.vim/bundle/vim-unimpaired"]
+	path = home/.vim/bundle/vim-unimpaired
+	url = https://github.com/tpopehome/.vim-unimpaired.git
+[submodule "home/.vim/bundle/vim-obsession"]
+	path = home/.vim/bundle/vim-obsession
+	url = https://github.com/tpopehome/.vim-obsession.git
+[submodule "home/.vim/bundle/vim-dispatch"]
+	path = home/.vim/bundle/vim-dispatch
+	url = https://github.com/tpopehome/.vim-dispatch.git
+[submodule "home/.vim/bundle/syntastic"]
+	path = home/.vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
-[submodule ".vim/bundle/emmet-vim"]
-	path = .vim/bundle/emmet-vim
-	url = https://github.com/mattn/emmet-vim.git
-[submodule ".vim/bundle/vim-vinegar"]
-	path = .vim/bundle/vim-vinegar
-	url = https://github.com/tpope/vim-vinegar.git
-[submodule ".vim/bundle/vim-ragtag"]
-	path = .vim/bundle/vim-ragtag
-	url = https://github.com/tpope/vim-ragtag.git
-[submodule ".vim/bundle/ctrlp.vim"]
-	path = .vim/bundle/ctrlp.vim
-	url = https://github.com/kien/ctrlp.vim.git
-[submodule "/Users/al_the_x/.vim/bundle/vimwiki"]
-	path = .vim/bundle/vimwiki
-	url = https://github.com/vimwiki/vimwiki.git
+[submodule "home/.vim/bundle/emmet-vim"]
+	path = home/.vim/bundle/emmet-vim
+	url = https://github.com/mattn/emmethome/.vim.git
+[submodule "home/.vim/bundle/vim-vinegar"]
+	path = home/.vim/bundle/vim-vinegar
+	url = https://github.com/tpopehome/.vim-vinegar.git
+[submodule "home/.vim/bundle/vim-ragtag"]
+	path = home/.vim/bundle/vim-ragtag
+	url = https://github.com/tpopehome/.vim-ragtag.git
+[submodule "home/.vim/bundle/ctrlp.vim"]
+	path = home/.vim/bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlphome/.vim.git
+[submodule "/Users/al_the_x/home/.vim/bundle/vimwiki"]
+	path = home/.vim/bundle/vimwiki
+	url = https://github.comhome/.vimwiki/vimwiki.git
 [submodule ".zprezto"]
-	path = .zprezto
+	path = home/.zprezto
 	url = git://github.com/al-the-x/prezto.git
-[submodule ".vim/bundle/github-issues.vim"]
-	path = .vim/bundle/github-issues.vim
-	url = git://github.com/jaxbot/github-issues.vim.git
-[submodule ".vim/bundle/editorconfig-vim"]
-	path = .vim/bundle/editorconfig-vim
-	url = https://github.com/editorconfig/editorconfig-vim.git
-[submodule ".tmux/plugins/tpm"]
-	path = .tmux/plugins/tpm
-	url = git://github.com/tmux-plugins/tpm.git
-[submodule ".vim/bundle/vim-tmux"]
-	path = .vim/bundle/vim-tmux
-	url = git://github.com/tmux-plugins/vim-tmux.git
+[submodule "home/.vim/bundle/github-issues.vim"]
+	path = home/.vim/bundle/github-issues.vim
+	url = git://github.com/jaxbot/github-issueshome/.vim.git
+[submodule "home/.vim/bundle/editorconfig-vim"]
+	path = home/.vim/bundle/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfighome/.vim.git
+[submodule "home/.vim/bundle/vim-tmux"]
+	path = home/.vim/bundle/vim-tmux
+	url = git://github.com/tmux-pluginshome/.vim-tmux.git
