@@ -52,3 +52,6 @@
 [submodule "home/.vim/bundle/vim-tmux"]
 	path = home/.vim/bundle/vim-tmux
 	url = git://github.com/tmux-plugins/vim-tmux.git
+[submodule "home/.tmux/plugins/tpm"]
+	path = home/.tmux/plugins/tpm
+	url = git://github.com/tmux-plugins/tpm.git
