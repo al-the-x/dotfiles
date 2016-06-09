@@ -1,3 +1,9 @@
+[submodule "home/.zprezto"]
+	path = home/.zprezto
+	url = git@github.com/al-the-x/prezto.git
+[submodule "home/.tmux/plugins/tpm"]
+	path = home/.tmux/plugins/tpm
+	url = git://github.com/tmux-plugins/tpm.git
 [submodule "home/.vim/bundle/vim-commentary"]
 	path = home/.vim/bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
@@ -40,18 +46,12 @@
 [submodule "home/.vim/bundle/vim-ragtag"]
 	path = home/.vim/bundle/vim-ragtag
 	url = https://github.com/tpope/vim-ragtag.git
-[submodule "/Users/al_the_x/home/.vim/bundle/vimwiki"]
+[submodule "home/.vim/bundle/vimwiki"]
 	path = home/.vim/bundle/vimwiki
 	url = https://github.com/vimwiki/vimwiki.git
-[submodule ".zprezto"]
-	path = home/.zprezto
-	url = git://github.com/al-the-x/prezto.git
 [submodule "home/.vim/bundle/editorconfig-vim"]
 	path = home/.vim/bundle/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim.git
 [submodule "home/.vim/bundle/vim-tmux"]
 	path = home/.vim/bundle/vim-tmux
 	url = git://github.com/tmux-plugins/vim-tmux.git
-[submodule "home/.tmux/plugins/tpm"]
-	path = home/.tmux/plugins/tpm
-	url = git://github.com/tmux-plugins/tpm.git
