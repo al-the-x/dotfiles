@@ -30,6 +30,9 @@ nmap <C-L> <C-W>l
 nmap <C-J> <C-W>j
 nmap <C-K> <C-W>k
 
+"" Settings for netrw file browsing...
+let g:netrw_liststyle=3
+
 "" Setup autocomplete...
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType ruby set omnifunc=rubycomplete#Complete
