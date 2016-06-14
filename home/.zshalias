@@ -1,1 +1,71 @@
-.zprezto/runcoms/zshalias
+alias j='jobs'
+
+alias vimrc="vim -c '"'edit $MYVIMRC'"'"
+alias zshalias="vim ~/.zshalias && source ~/.zshalias"
+
+alias today='gdate -d today -I'
+alias yesterday='gdate -d yesterday -I'
+alias tomorrow='gdate -d tomorrow -I'
+
+## From `brew install hub`
+alias gpr='git pull-request'
+
+## From `brew install git extras`
+alias gwi='git ignore'
+alias gbp='git-delete-merged-branches'
+
+## Replacing `git ll` and `git la`...
+alias gll='git log --graph --pretty=format:"${_git_log_oneline_format}"'
+alias gla='gll --all'
+
+## From `brew install `hub`...
+alias ggo='git browse'
+
+## Missing from Prezto?
+alias gwm='git mv'
+alias gwM='git mv --force'
+
+## Application shortcuts...
+
+## Find WTF this command is... with regex!
+## b/c prezto ships with too many dang aliases to remember them all...
+function wtf {
+  alias | grep $@
+}
+
+## Print lines between two markers...
+## TODO: Move into an autoloading function
+function between {
+  if [ $# -lt 1 ]; then
+    cat <<'USAGE'
+  usage: between START END
+
+    Print input from `stdin` that appears between `START`
+    and `END` markers, as long as they appear on a single
+    line.
+
+    EXAMPLE
+
+    $> between.zsh | between USAGE EXAMPLE
+      usage: between START END
+
+        Print input from `stdin` that appears between `START`
+        and `END` markers, as long as they appear on a single
+        line.
+USAGE
+
+    return 1
+  fi
+  if [ $# -gt 1 ]; then
+    gawk "/${1}/{keep=1}/${2}/{keep=0} keep"
+  else
+    gawk "/${1}/{keep=1}keep"
+  fi
+} ## END between
+
+## Print a random line from a file...
+## TODO: Move into an autoloading function
+function randline {
+  integer lines=$(wc -l <$1)
+  sed -n $[RANDOM % lines + 1]p $1
+} ## END randline
