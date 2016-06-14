@@ -1,3 +1,8 @@
+"" Make sessions play nice with Pathogen et al
+set sessionoptions-=options
+
+"" Load and enable Pathogen
+"" TODO: Switch to Vundle one day? https://github.com/VundleVim/Vundle.vim
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
