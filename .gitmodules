@@ -58,3 +58,6 @@
 [submodule "home/.vim/bundle/ctrlp.vim"]
 	path = home/.vim/bundle/ctrlp.vim
 	url = git://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "home/.vim/bundle/vim-go"]
+	path = home/.vim/bundle/vim-go
+	url = git://github.com/fatih/vim-go.git
