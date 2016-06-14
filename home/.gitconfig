@@ -6,65 +6,66 @@
  # @author David Rogers <al.the.x@gmail.com>
  ##
 [user]
-    ## Default identification... Remember to change this for work projects!
+	## Default identification... Remember to change this for work projects!
 	name = David Rogers
 	email = hello@al-the-x.me
 [core]
-    ## Use a global excludesfile for ignore patterns across repos...
-    excludesfile = ~/.gitexcludes
+	## Use a global excludesfile for ignore patterns across repos...
+	excludesfile = ~/.gitexcludes
 	editor = vim
 [color]
 	ui = auto
 [alias]
-    ## Show all configured aliases...
+	## Show all configured aliases...
 	aliases = !git config --get-regexp \"alias\\.\"
 
-    ## Much more descriptive, IMO...
-    squash = rebase -i --autosquash
+	## Much more descriptive, IMO...
+	squash = rebase -i --autosquash
 	conflicts = diff --name-only --diff-filter=U
 
-    ## Easier to type...
+	## Easier to type...
 	st = status -suno
 	stu = status -su
-    br = branch
-    co = checkout
-    sq = !git squash
+	br = branch
+	co = checkout
+	sq = !git squash
 
-    ## Similar to the `lola` aliases out there, but more mnemonic for me:
-    ll = !LESS=$LESS'S' git log --oneline --graph --decorate
-    la = !LESS=$LESS'S' git log --oneline --graph --decorate --all
+	## Similar to the `lola` aliases out there, but more mnemonic for me:
+	ll = !LESS=$LESS'S' git log --oneline --graph --decorate
+	la = !LESS=$LESS'S' git log --oneline --graph --decorate --all
 
-    ## Like "git superpull" but less to type...
-    pulls = !git pull $@ && git submodule update --init
+	## Like "git superpull" but less to type...
+	pulls = !git pull $@ && git submodule update --init
 
-    ## Remove a local AND remote branch, if successfully merged to HEAD...
-    retire = "!f(){ [ ! \"$#\" = \"2\" ] && (echo \"usage: git retire <remote> <branch>\" && exit 1) || (git branch -d $2 && git push --delete $1 $2); } && f"
+	## Remove a local AND remote branch, if successfully merged to HEAD...
+	retire = "!f(){ [ ! \"$#\" = \"2\" ] && (echo \"usage: git retire <remote> <branch>\" && exit 1) || (git branch -d $2 && git push --delete $1 $2); } && f"
 
-    ## Add to the local ignore list... Need refactor into full git-command to support "--global" and "--repo"
-    ignore = "!f(){ for arg in $@; do echo $arg >> .gitignore; done } && f"
+	## Add to the local ignore list... Need refactor into full git-command to support "--global" and "--repo"
+	ignore = "!f(){ for arg in $@; do echo $arg >> .gitignore; done } && f"
 
-    ## Find the ref(s) corresponding to HEAD programatically...
+	## Find the ref(s) corresponding to HEAD programatically...
 	where = !git symbolic-ref -q HEAD | sed 's|refs/heads/||'
 
-    ## Github-related: see https://github.com/github/hub
+	## Github-related: see https://github.com/github/hub
 	pr = !hub pull-request
 	which = branch --contains
 	wh = branch --contains
 	push-all = push --follow-tags --all
 
 [merge]
-    ff = only
-    ## No moar merge bubbles, plz. Kthxbai!
+	ff = only
+	## No moar merge bubbles, plz. Kthxbai!
 
-    ## So `git merge` works with the upstream branch by default...
-    defaultToUpstream = true
+	## So `git merge` works with the upstream branch by default...
+	defaultToUpstream = true
 	tool = vimdiff
+	conflictstyle = diff3
 [github]
-    user = al-the-x
+	user = al-the-x
 [push]
-    default = upstream
+	default = upstream
 [include]
-    path = ~/.gitcredentials
+	path = ~/.gitcredentials
 [gitflow "feature.finish"]
 	keepremote = true
 [gitflow "hotfix.finish"]
@@ -73,3 +74,5 @@
 	keepremote = true
 [diff]
 	tool = vimdiff
+[mergetool]
+	prompt = false
