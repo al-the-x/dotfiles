@@ -61,3 +61,6 @@
 [submodule "home/.vim/bundle/vim-go"]
 	path = home/.vim/bundle/vim-go
 	url = git://github.com/fatih/vim-go.git
+[submodule "home/.vim/bundle/vim-wipeout"]
+	path = home/.vim/bundle/vim-wipeout
+	url = git://github.com/artnez/vim-wipeout.git
