@@ -1,4 +1,5 @@
 alias j='jobs'
+alias .f='dotfiles'
 
 alias vimrc="vim -c '"'edit $MYVIMRC'"'"
 alias zshalias="vim ~/.zshalias && source ~/.zshalias"
@@ -31,6 +32,22 @@ alias gwM='git mv --force'
 ## b/c prezto ships with too many dang aliases to remember them all...
 function wtf {
   alias | grep $@
+}
+
+
+function dotfiles {
+  [ $# -ge 1 ] || {
+    cat >&2 <<'USAGE'
+  usage: dotfiles COMMAND [options]
+
+    Proxy for `homesick COMMAND dotfiles [options]`
+USAGE
+
+    return 1
+  }
+
+  CMD="$1"; shift
+  homesick $CMD dotfiles $@
 }
 
 ## Print lines between two markers...
