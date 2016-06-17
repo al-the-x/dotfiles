@@ -2,6 +2,7 @@ alias j='jobs'
 alias .f='dotfiles'
 
 alias vimrc="vim -c '"'edit $MYVIMRC'"'"
+alias vims="vim -S"
 alias zshalias="vim ~/.zshalias && source ~/.zshalias"
 
 alias today='gdate -d today -I'
