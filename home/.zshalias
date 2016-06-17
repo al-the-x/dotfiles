@@ -4,6 +4,7 @@ alias .f='dotfiles'
 alias vimrc="vim -c '"'edit $MYVIMRC'"'"
 alias vims="vim -S"
 alias zshalias="vim ~/.zshalias && source ~/.zshalias"
+alias grepc="grep --color=always"
 
 alias today='gdate -d today -I'
 alias yesterday='gdate -d yesterday -I'
