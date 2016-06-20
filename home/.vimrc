@@ -54,7 +54,7 @@ set formatoptions+=rol
 set nrformats+=alpha
 
 "" Kill the help key...
-map! <F1> <Nop>
+noremap! <F1> <Nop>
 
 "" Faster panel switching...
 nmap <C-H> <C-W>h
