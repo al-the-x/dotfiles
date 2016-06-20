@@ -62,6 +62,9 @@ nmap <C-L> <C-W>l
 nmap <C-J> <C-W>j
 nmap <C-K> <C-W>k
 
+"" Press <Leader><ESC> to clear search highlighting until the next search...
+nnoremap <Leader><ESC> :noh<RETURN>
+
 "" Settings for netrw file browsing...
 let g:netrw_liststyle=3
 
