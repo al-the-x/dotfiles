@@ -2,9 +2,36 @@
 set sessionoptions-=options
 
 "" Load and enable Pathogen
+" runtime bundle/vim-pathogen/autoload/pathogen.vim
+" call pathogen#infect()
+
 "" TODO: Switch to Vundle one day? https://github.com/VundleVim/Vundle.vim
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
+"" source ~/.vim/bundle.vim
+runtime bundle/Vundle.vim
+call vundle#begin()
+  Plugin 'VundleVim/Vundle.vim'
+  Plugin 'tpope/vim-sensible'
+  Plugin 'ctrlpvim/ctrlp.vim'
+  Plugin 'editorconfig/editorconfig-vim'
+  Plugin 'mattn/emmet-vim'
+  Plugin 'scrooloose/syntastic'
+  Plugin 'tpope/vim-commentary'
+  Plugin 'tpope/vim-dispatch'
+  Plugin 'tpope/vim-eunuch'
+  Plugin 'tpope/vim-fugitive'
+  Plugin 'fatih/vim-go'
+  Plugin 'tpope/vim-markdown'
+  Plugin 'tpope/vim-obsession'
+  Plugin 'tpope/vim-pathogen'
+  Plugin 'tpope/vim-ragtag'
+  Plugin 'tpope/vim-repeat'
+  Plugin 'tpope/vim-surround'
+  Plugin 'tmux-plugins/vim-tmux'
+  Plugin 'tpope/vim-unimpaired'
+  Plugin 'tpope/vim-vinegar'
+  Plugin 'artnez/vim-wipeout'
+call vundle#end()
+filetype plugin indent on
 
 syntax on
 
