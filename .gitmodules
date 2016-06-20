@@ -64,3 +64,6 @@
 [submodule "home/.vim/bundle/vim-wipeout"]
 	path = home/.vim/bundle/vim-wipeout
 	url = git://github.com/artnez/vim-wipeout.git
+[submodule "home/.vim/bundle/Vundle.vim"]
+	path = home/.vim/bundle/Vundle.vim
+	url = git://github.com/VundleVim/Vundle.vim.git
