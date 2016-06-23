@@ -7,7 +7,7 @@ set sessionoptions-=options
 
 "" TODO: Switch to Vundle one day? https://github.com/VundleVim/Vundle.vim
 "" source ~/.vim/bundle.vim
-runtime bundle/Vundle.vim
+se rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
   Plugin 'VundleVim/Vundle.vim'
   Plugin 'tpope/vim-sensible'
