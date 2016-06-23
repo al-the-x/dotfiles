@@ -1,6 +1,6 @@
 [submodule "home/.zprezto"]
 	path = home/.zprezto
-	url = git@github.com/al-the-x/prezto.git
+	url = git://github.com/al-the-x/prezto.git
 [submodule "home/.tmux/plugins/tpm"]
 	path = home/.tmux/plugins/tpm
 	url = git://github.com/tmux-plugins/tpm.git
