@@ -14,5 +14,8 @@ REMOTE="git@github.com:al-the-x/dotfiles.git"
   homesick link
 }
 
+## TODO: Determine platform: Debian/CentOS/MacOSX/Cygwin
 ## TODO: Install `brew` via Homebrew / Linuxbrew per platform
 ## TODO: Install and run `brew bundle`: `brew tap homebrew/bundle && brew bundle --global`
+## TODO: Install global python packages
+## TODO: Install global ruby gems
