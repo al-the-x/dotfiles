@@ -88,3 +88,12 @@ function randline {
   integer lines=$(wc -l <$1)
   sed -n $[RANDOM % lines + 1]p $1
 } ## END randline
+
+
+## Fixup the SSH environment variables inside tmux...
+### TODO: Move into an autoloading function
+function ssh-fix {
+  [[ -n "$TMUX" && -n "$SSH_CONNECTION" ]] && {
+    eval "$(tmux showenv | grep -v '^-' | sed -e 's/=\(.*\)/="\1"/' -e 's/^/export /')"
+  }
+}
