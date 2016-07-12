@@ -32,8 +32,15 @@ call vundle#begin()
   Plugin 'tpope/vim-surround'
   Plugin 'tpope/vim-unimpaired'
   Plugin 'tpope/vim-vinegar'
+  Plugin 'google/vim-maktaba'
+  Plugin 'google/vim-codefmt'
+  Plugin 'google/vim-glaive'
 call vundle#end()
 filetype plugin indent on
+
+"" Configure Glaive-enabled plugins
+call glaive#Install()
+Glaive codefmt plugin[mappings]
 
 syntax on
 
