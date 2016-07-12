@@ -55,6 +55,34 @@ USAGE
   homesick $CMD dotfiles $@
 }
 
+##
+# Create a new `vim` session tracked with `:Obsession`
+##
+function vim-session {
+  SESSION=$1; shift
+
+  ##
+  # I'm not entirely certain that `vim-obsession` will start tracking just
+  # because a session is started, but we'll see...
+  ##
+  [[ -f $SESSION ]] && vim -S $SESSION $@
+}
+
+##
+# Create or open a `vim-session` named like `git-branch-current` and stored in
+# a directory named `.vim/` at the root of the work-tree.
+##
+function vim-session-branch {
+  vim-session "${$(git-dir):h}/.vim/$(git-branch-current).vim" $@
+}
+
+##
+# Create a new branch and open a `vim-session-branch` for it
+##
+function git-branch-session {
+  { git checkout $1 || git checkout -b $1 } && vim-session-branch
+}
+
 ## Print lines between two markers...
 ## TODO: Move into an autoloading function
 function between {
