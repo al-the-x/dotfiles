@@ -42,6 +42,26 @@ filetype plugin indent on
 call glaive#Install()
 Glaive codefmt plugin[mappings]
 
+"" Configure `statusline` with help from `tpope/fugitive`
+set statusline=%<%f\ %h%m%r[%{fugitive#head()}]%=%-14.(%l,%c%V%)\ %P
+
+"" Configure `scrooloose/syntastic`
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers=['eslint']
+
+"" Add Syntastic to `statusline`
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+"" Configure `ctrlpvim/ctrlp.vim`
+let g:ctrlp_switch_buffer="ETVH"
+let g:ctrlp_working_path_mode='rca'
+let g:ctrlp_root_markers= ['.ctrlp']
+
 syntax on
 
 colorscheme desert
