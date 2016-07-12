@@ -65,6 +65,9 @@ let g:ctrlp_root_markers= ['.ctrlp']
 syntax on
 
 colorscheme desert
+if &diff
+  colorscheme industry
+endif
 
 set tabstop=2
 set shiftwidth=2
