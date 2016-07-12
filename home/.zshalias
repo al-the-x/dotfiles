@@ -83,8 +83,11 @@ function git-branch-session {
   { git checkout $1 || git checkout -b $1 } && vim-session-branch
 }
 
-## Print lines between two markers...
-## TODO: Move into an autoloading function
+##
+# Print all the lines between two markers or that appear _after_ one marker
+#
+# TODO: Move into an autoloading function
+##
 function between {
   if [ $# -lt 1 ]; then
     cat <<'USAGE'
