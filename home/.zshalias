@@ -37,6 +37,9 @@ function wtf {
 }
 
 
+##
+# My primary CASTLE is named `dotfiles`
+##
 function dotfiles {
   [ $# -ge 1 ] || {
     cat >&2 <<'USAGE'
@@ -45,7 +48,7 @@ function dotfiles {
     Proxy for `homesick COMMAND dotfiles [options]`
 USAGE
 
-    return 1
+    homesick --help; return 1
   }
 
   CMD="$1"; shift
