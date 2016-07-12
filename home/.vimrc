@@ -114,6 +114,8 @@ autocmd FileType md set filetype=markdown
 "" To work with crontab files...
 autocmd FileType crontab set nobackup nowritebackup
 
+"" Help NeoVim check for modified files: https://github.com/neovim/neovim/issues/2127
+autocmd BufEnter,FocusGained * checktime
 
 ""
 " Execute a :s[earch] without clobbering the search register, with all the
