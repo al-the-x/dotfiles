@@ -69,18 +69,17 @@ if &diff
   colorscheme industry
 endif
 
+"" More sane defaults
+set number
+set foldmethod=indent
+set colorcolumn=80
+set laststatus=2
+set formatoptions+=rol
+
+"" Use 2-space tabs by default
 set tabstop=2
 set shiftwidth=2
 set expandtab
-set cindent
-set number
-set foldmethod=indent
-set ignorecase
-set smartcase
-set colorcolumn=80
-set laststatus=2
-set backspace=2
-set formatoptions+=rol
 
 "" Make `<C-A>` increment alphabetic characters
 set nrformats+=alpha
@@ -97,7 +96,7 @@ nmap <C-K> <C-W>k
 "" Press <Leader><ESC> to clear search highlighting until the next search...
 nnoremap <Leader><ESC> :noh<RETURN>
 
-"" Settings for netrw file browsing...
+"" Make `netrw` display in tree mode...
 let g:netrw_liststyle=3
 
 "" Setup autocomplete...
@@ -115,8 +114,6 @@ autocmd FileType md set filetype=markdown
 "" To work with crontab files...
 autocmd FileType crontab set nobackup nowritebackup
 
-"" Settings for http://github.com/vim-scripts/vimwiki
-let g:vimwiki_list=[{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md' }]
 
 ""
 " Execute a :s[earch] without clobbering the search register, with all the
