@@ -60,7 +60,7 @@ set statusline+=%*
 "" Configure `ctrlpvim/ctrlp.vim`
 let g:ctrlp_switch_buffer="ETVH"
 let g:ctrlp_working_path_mode='rca'
-let g:ctrlp_root_markers= ['.ctrlp']
+let g:ctrlp_root_markers= ['tags', '.ctrlp']
 
 syntax on
 
