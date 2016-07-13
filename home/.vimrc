@@ -36,6 +36,8 @@ call vundle#begin()
   "" Syntax-checking and highlighting...
   Plugin 'scrooloose/syntastic'
 
+  Plugin 'burnettk/vim-angular'
+  Plugin 'pangloss/vim-javascript'
   Plugin 'fatih/vim-go'
   Plugin 'digitaltoad/vim-pug'
   Plugin 'tmux-plugins/vim-tmux'
