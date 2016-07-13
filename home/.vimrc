@@ -10,31 +10,39 @@ set sessionoptions-=options
 se rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
   Plugin 'VundleVim/Vundle.vim'
-  Plugin 'airblade/vim-gitgutter'
-  Plugin 'artnez/vim-wipeout'
-  Plugin 'ctrlpvim/ctrlp.vim'
-  Plugin 'editorconfig/editorconfig-vim'
-  Plugin 'fatih/vim-go'
-  Plugin 'mattn/emmet-vim'
-  Plugin 'scrooloose/syntastic'
-  Plugin 'digitaltoad/vim-pug'
-  Plugin 'tmux-plugins/vim-tmux'
-  Plugin 'tpope/vim-commentary'
-  Plugin 'tpope/vim-dispatch'
-  Plugin 'tpope/vim-eunuch'
-  Plugin 'tpope/vim-fugitive'
-  Plugin 'tpope/vim-markdown'
-  Plugin 'tpope/vim-obsession'
-  Plugin 'tpope/vim-pathogen'
-  Plugin 'tpope/vim-ragtag'
-  Plugin 'tpope/vim-repeat'
+
+  "" General utilities
   Plugin 'tpope/vim-sensible'
-  Plugin 'tpope/vim-surround'
-  Plugin 'tpope/vim-unimpaired'
-  Plugin 'tpope/vim-vinegar'
   Plugin 'google/vim-maktaba'
   Plugin 'google/vim-codefmt'
   Plugin 'google/vim-glaive'
+  Plugin 'tpope/vim-dispatch'
+  Plugin 'editorconfig/editorconfig-vim'
+  Plugin 'tpope/vim-commentary'
+  Plugin 'tpope/vim-repeat'
+  Plugin 'tpope/vim-surround'
+  Plugin 'tpope/vim-unimpaired'
+  Plugin 'tpope/vim-vinegar'
+
+  "" Use `git` from within `vim`
+  Plugin 'tpope/vim-fugitive'
+  Plugin 'airblade/vim-gitgutter'
+
+  "" Buffer and file management
+  Plugin 'artnez/vim-wipeout'
+  Plugin 'ctrlpvim/ctrlp.vim'
+  Plugin 'tpope/vim-obsession'
+
+  "" Syntax-checking and highlighting...
+  Plugin 'scrooloose/syntastic'
+
+  Plugin 'fatih/vim-go'
+  Plugin 'digitaltoad/vim-pug'
+  Plugin 'tmux-plugins/vim-tmux'
+  Plugin 'tpope/vim-eunuch'
+  Plugin 'tpope/vim-markdown'
+  Plugin 'mattn/emmet-vim'
+  Plugin 'tpope/vim-ragtag'
 call vundle#end()
 filetype plugin indent on
 
