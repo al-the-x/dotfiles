@@ -1,9 +1,15 @@
 #!/usr/bin/env zsh
 
-$(which curl) -ns ${@[3,-1]} https://api.github.com/${1/#\//} |
+for c in curl jq less; do
+  whence $c 2>&1 >/dev/null || {
+    >&2 echo "Cannot find $c"; exit 1
+  }
+done
+
+curl -ns ${@[3,-1]} https://api.github.com/${1/#\//} |
   if [ -t 1 ]; then
-    $(which jq) -C ${2:=.} | \
-    LESS="$LESS"' -r' $(which less)
+    ## If we're not in a pipeline, force colorized output and pipe to less...
+    jq -C ${2:=.} | LESS="$LESS"' -r' less
   else
-    $(which jq) ${2:=.}
+    jq ${2:=.}
   fi
