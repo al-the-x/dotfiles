@@ -28,6 +28,7 @@ call vundle#begin()
   "" Use `git` from within `vim`
   Plugin 'tpope/vim-fugitive'
   Plugin 'airblade/vim-gitgutter'
+  Plugin 'alexdavid/vim-min-git-status'
 
   "" Buffer and file management
   Plugin 'artnez/vim-wipeout'
