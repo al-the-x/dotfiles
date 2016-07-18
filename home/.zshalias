@@ -59,13 +59,13 @@ USAGE
 # Create a new `vim` session tracked with `:Obsession`
 ##
 function vim-session {
-  SESSION=$1; shift
+  SESSION="$1"; shift
 
   ##
   # I'm not entirely certain that `vim-obsession` will start tracking just
   # because a session is started, but we'll see...
   ##
-  [[ -f $SESSION ]] && vim -S $SESSION $@
+  vim -S "$SESSION" -c "Obsession $SESSION" $@
 }
 
 ##
