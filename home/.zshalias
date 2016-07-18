@@ -73,7 +73,7 @@ function vim-session {
 # a directory named `.vim/` at the root of the work-tree.
 ##
 function vim-session-branch {
-  vim-session "${$(git-dir):h}/.vim/$(git-branch-current).vim" $@
+  vim-session "$(git-root)/.vim/$(git-branch-current).vim" $@
 }
 
 ##
