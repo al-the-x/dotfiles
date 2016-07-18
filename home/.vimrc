@@ -106,7 +106,7 @@ nmap <C-J> <C-W>j
 nmap <C-K> <C-W>k
 
 "" Press <Leader><ESC> to clear search highlighting until the next search...
-nnoremap <Leader><ESC> :noh<RETURN>
+nnoremap <Leader><ESC> :noh<CR>
 
 "" Make `netrw` display in tree mode...
 let g:netrw_liststyle=3
