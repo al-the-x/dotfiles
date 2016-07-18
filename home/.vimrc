@@ -23,6 +23,7 @@ call vundle#begin()
   Plugin 'tpope/vim-surround'
   Plugin 'tpope/vim-unimpaired'
   Plugin 'tpope/vim-vinegar'
+  Plugin 'tpope/vim-scriptease'
 
   "" Use `git` from within `vim`
   Plugin 'tpope/vim-fugitive'
