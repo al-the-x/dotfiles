@@ -108,6 +108,10 @@ nmap <C-K> <C-W>k
 "" Press <Leader><ESC> to clear search highlighting until the next search...
 nnoremap <Leader><ESC> :noh<CR>
 
+nmap <Leader>gws :Gministatus<CR>
+nmap <Leader>gc :Gcommit -v<CR>
+nmap <Leader>gwd :Gdiff<CR>
+
 "" Make `netrw` display in tree mode...
 let g:netrw_liststyle=3
 
