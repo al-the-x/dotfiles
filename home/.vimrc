@@ -29,6 +29,7 @@ call vundle#begin()
   Plugin 'tpope/vim-fugitive'
   Plugin 'airblade/vim-gitgutter'
   Plugin 'alexdavid/vim-min-git-status'
+  Plugin 'tpope/vim-rhubarb'
 
   "" Buffer and file management
   Plugin 'artnez/vim-wipeout'
