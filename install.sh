@@ -13,11 +13,11 @@ case "$OSTYPE" in
     ## So install Homebrew already...
     /usr/bin/env ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   ;;
-  "cygwin"*) echo 'I am Cygwin!' ;;
   "linux"*) echo 'True Linux, dog.'
     ## Thanks, how about some Linuxbrew...
     /usr/bin/env ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
   ;;
+  "cygwin"*) echo 'I am Cygwin!' ;;
   "bsd"*) echo 'What, BSD?' ;;
   *) echo 'Who knows?' ;;
 esac
