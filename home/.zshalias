@@ -10,6 +10,9 @@ alias today='gdate -d today -I'
 alias yesterday='gdate -d yesterday -I'
 alias tomorrow='gdate -d tomorrow -I'
 
+alias downcase='tr \[:upper:\] \[:lower:\]'
+alias skewer='tr \[:blank:\] -'
+
 ## From `brew install hub`
 alias gpr='git pull-request'
 
@@ -27,6 +30,11 @@ alias ggo='git browse'
 ## Missing from Prezto?
 alias gwm='git mv'
 alias gwM='git mv --force'
+
+## Update `master`...
+alias gfu='gf origin master:master'
+
+alias shrug='echo "¯\_(ツ)_/¯"'
 
 ## Application shortcuts...
 
@@ -60,6 +68,11 @@ USAGE
 
   CMD="$1"; shift
   homesick $CMD dotfiles $@
+}
+
+## Run VundleInstall
+function vim-install {
+  vim --headless +:VundleInstall +:qa
 }
 
 ##
@@ -137,4 +150,37 @@ function ssh-fix {
   [[ -n "$TMUX" && -n "$SSH_CONNECTION" ]] && {
     eval "$(tmux showenv | grep -v '^-' | sed -e 's/=\(.*\)/="\1"/' -e 's/^/export /')"
   }
+}
+
+function colorize {
+  COLOR="${1:=white}"; shift
+  ack --flush --passthru --color --color-match="$COLOR" $@
+}
+
+function colorize-log {
+#  let PATTERNS=${(fA)PATTERNS:="$(
+#    red ERROR
+#    yellow 'WARN(ING)?'
+#    blue INFO
+#    green 'DEBUG(GER|GING)?'
+#    'bold white' TRACE
+#    magenta '\d{4}-\d{2}-\d{2}(T| )\d{2}(:\d{2}){2}'
+#    magenta '[\w-/\.]+(:\d+)?'
+#  )"}
+#
+#  let pipeline=()
+#
+#  for color pattern in $PATTERNS; do
+#    pipeline+=( "colorize $color $pattern" )
+#  done
+#
+#  echo $pipeline; exit
+
+  colorize red ERROR | \
+  colorize yellow 'WARN(?:ING)?' | \
+  colorize blue INFO | \
+  colorize green 'DEBUG(?:GER|GING)?' | \
+  colorize white TRACE | \
+  colorize magenta '(\d{4}-\d{2}-\d{2}(T| )\d{2}(\:\d{2}){2})' | \
+  colorize magenta '(([\w-]+/)*[\w-]+\.\w{,3}(:\d+)?)'
 }
