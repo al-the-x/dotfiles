@@ -5,16 +5,16 @@ set sessionoptions-=options
 " runtime bundle/vim-pathogen/autoload/pathogen.vim
 " call pathogen#infect()
 
-"" TODO: Switch to Vundle one day? https://github.com/VundleVim/Vundle.vim
-"" source ~/.vim/bundle.vim
 se rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
   Plugin 'VundleVim/Vundle.vim'
 
   "" General utilities
+  Plugin 'flazz/vim-colorschemes'
   Plugin 'tpope/vim-sensible'
   Plugin 'google/vim-maktaba'
   Plugin 'google/vim-codefmt'
+  Plugin 'google/vim-coverage'
   Plugin 'google/vim-glaive'
   Plugin 'tpope/vim-dispatch'
   Plugin 'editorconfig/editorconfig-vim'
@@ -24,6 +24,10 @@ call vundle#begin()
   Plugin 'tpope/vim-unimpaired'
   Plugin 'tpope/vim-vinegar'
   Plugin 'tpope/vim-scriptease'
+  "" ^^^ Mainly for `:Verbose`
+  Plugin 'tpope/vim-abolish'
+  "" ^^^ For case coercion: https://github.com/tpope/vim-abolish#coercion
+  ""     See `:Verbose nmap | /crs
 
   "" Use `git` from within `vim`
   Plugin 'tpope/vim-fugitive'
@@ -48,6 +52,7 @@ call vundle#begin()
   Plugin 'tpope/vim-markdown'
   Plugin 'mattn/emmet-vim'
   Plugin 'tpope/vim-ragtag'
+  Plugin 'kylef/apiblueprint.vim'
 call vundle#end()
 filetype plugin indent on
 
