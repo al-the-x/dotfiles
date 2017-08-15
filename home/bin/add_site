@@ -1,20 +1,45 @@
 #!/bin/bash
 
-if [[ $# < 1 ]]; then
-    echo 'Available:'
-    ls -1d ~/Sites/*.local | xargs basename | xargs -n1 echo \*
-    echo
-    echo 'Already in /etc/hosts:'
-    echo
-    grep -v localhost /etc/hosts
-    exit
-fi
+function USAGE {
+  cat <<USAGE_MSG
+USAGE: $0 HOSTNAME [ADDRESS]
 
-address=$([[ "$2" ]] && echo $2 || echo '127.0.0.1')
+    Add \`HOSTNAME\` to \`/etc/hosts\` for \`ADDRESS\` (127.0.0.1)
 
-hostname="$1"
+$(AVAILABLE)
 
-echo "Adding $hostname ($address)..."
+$(CONFIGURED)
+USAGE_MSG
+  exit
+}
 
-sudo -s "echo $address $1 >> /etc/hosts"
+function AVAILABLE {
+  local AVAILABLE_SITES="$(ls -1d '$HOME/Sites/*.local' 2>/dev/null)"
 
+  echo 'Available in `~/Sites/`:'
+  [ -n "$AVAILABLE_SITES" ] && {
+    echo "$AVAILABLE_SITES" | sed 's/^/- /'
+  } || echo '- None'
+}
+
+function CONFIGURED {
+  local CONFIGURED_SITES="$(grep '127\.0\.0\.1' /etc/hosts | grep -v localhost)"
+
+  echo 'Configured in `/etc/hosts`:'
+  [ -n "$CONFIGURED_SITES" ] && {
+    echo "$CONFIGURED_SITES" | sed 's/^/- /'
+  } || echo '- None'
+}
+
+function ADD_HOST {
+  local ADDRESS="${2:-127.0.0.1}"
+
+  local ADDED_HOST="$1"
+
+  echo 'Adding `'$ADDED_HOST'` (`'$ADDRESS'`) to `/etc/hosts`'
+  sudo -s "echo $ADDRESS $ADDED_HOST >> /etc/hosts"
+}
+
+[[ $# < 1 ]] && USAGE
+
+ADD_HOST $@
