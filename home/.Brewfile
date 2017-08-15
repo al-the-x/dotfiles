@@ -1,79 +1,84 @@
-tap 'al-the-x/mine'
-tap 'caskroom/cask'
-tap 'homebrew/bundle'
-tap 'homebrew/core'
-tap 'homebrew/dupes'
-tap 'homebrew/games'
-tap 'homebrew/versions'
-tap 'neovim/neovim'
-brew 'autoconf'
-brew 'xz'
-brew 'automake'
-brew 'cmake'
-brew 'gmp'
-brew 'coreutils'
-brew 'cowsay'
-brew 'direnv'
-brew 'gettext'
-brew 'dos2unix'
-brew 'findutils', args: ['with-default-names']
-brew 'mpfr'
-brew 'readline'
-brew 'gawk'
-brew 'gdbm'
-brew 'gist'
-brew 'pcre'
-brew 'git'
-brew 'git-extras'
-brew 'gnu-getopt'
-brew 'git-flow-avh'
-brew 'gnu-indent', args: ['with-default-names']
-brew 'gnu-sed', args: ['with-default-names']
-brew 'gnu-tar', args: ['with-default-names']
-brew 'gnu-which', args: ['with-default-names']
-brew 'gnupg'
-brew 'hub'
-brew 'oniguruma'
-brew 'jq'
-brew 'pkg-config'
-brew 'openssl'
-brew 'libevent'
-brew 'libtool'
-brew 'libyaml'
-brew 'lorem'
-brew 'markdown'
-brew 'moreutils'
-brew 'node'
-brew 'sqlite'
-brew 'python'
-brew 'python3'
-brew 'reattach-to-user-namespace'
-brew 'ruby'
-brew 'ruby-install'
-brew 'tidy-html5'
-brew 'tmux'
-brew 'tree'
-brew 'watch'
-brew 'wdiff', args: ['with-gettext']
-brew 'wget'
-brew 'zsh'
-brew 'zsh-syntax-highlighting'
-brew 'homebrew/dupes/diffutils'
-brew 'homebrew/dupes/gpatch'
-brew 'homebrew/dupes/grep', args: ['with-default-names']
-brew 'homebrew/dupes/gzip'
-brew 'homebrew/dupes/less'
-brew 'homebrew/dupes/openssh'
-brew 'homebrew/dupes/rsync'
-brew 'homebrew/dupes/unzip'
-brew 'homebrew/dupes/zlib'
-brew 'homebrew/games/frotz'
-brew 'neovim/neovim/neovim', args: ['HEAD']
-cask 'dropbox'
-cask 'firefox'
-cask 'flux'
-cask 'google-chrome'
-cask 'iterm2'
-cask 'jing'
-cask 'qlmarkdown'
-cask 'quicksilver'
+tap "al-the-x/mine"
+tap "caskroom/cask"
+tap "caskroom/fonts"
+tap "homebrew/bundle"
+tap "homebrew/core"
+tap "homebrew/dupes"
+tap "homebrew/games"
+tap "homebrew/versions"
+tap "neovim/neovim"
+brew "ack"
+brew "autoconf"
+brew "automake"
+brew "cmake"
+brew "colordiff"
+brew "coreutils"
+brew "cowsay"
+brew "ctags"
+brew "dateutils"
+brew "diffutils"
+brew "direnv"
+brew "dos2unix"
+brew "git"
+brew "drafter", args: ["HEAD"]
+brew "findutils", args: ["with-default-names"]
+brew "frotz"
+brew "gawk"
+brew "gdbm"
+brew "gettext"
+brew "gist"
+brew "git-extras"
+brew "gnu-getopt"
+brew "git-flow-avh"
+brew "gnu-indent", args: ["with-default-names"]
+brew "gnu-sed", args: ["with-default-names"]
+brew "gnu-tar", args: ["with-default-names"]
+brew "gnu-which", args: ["with-default-names"]
+brew "gnupg"
+brew "gpatch"
+brew "pcre"
+brew "grep", args: ["with-default-names"]
+brew "gzip"
+brew "hub"
+brew "oniguruma"
+brew "jq"
+brew "less"
+brew "openssl"
+brew "libevent"
+brew "libtool"
+brew "libyaml"
+brew "lorem"
+brew "markdown"
+brew "moreutils"
+brew "neovim", args: ["HEAD"]
+brew "node"
+brew "nodejs-install"
+brew "nvm"
+brew "openssh"
+brew "pstree"
+brew "sqlite"
+brew "python"
+brew "python3"
+brew "reattach-to-user-namespace"
+brew "rlwrap"
+brew "rsync"
+brew "ruby"
+brew "ruby-install"
+brew "tidy-html5"
+brew "tmux"
+brew "tree"
+brew "unzip"
+brew "watch"
+brew "wdiff", args: ["with-gettext"]
+brew "wget"
+brew "zlib"
+brew "zsh"
+brew "zsh-syntax-highlighting"
+cask "dropbox"
+cask "firefox"
+cask "flux"
+cask "font-fira-code"
+cask "google-chrome"
+cask "iterm2"
+cask "lighttable"
+cask "skyfonts"
