@@ -80,9 +80,13 @@ let g:ctrlp_switch_buffer="ETVH"
 let g:ctrlp_working_path_mode='rca'
 let g:ctrlp_root_markers= ['tags', '.ctrlp']
 
+"" Make `netrw` display in tree mode...
+let g:netrw_liststyle=3
+
 syntax on
 
 colorscheme desert
+set background=light
 if &diff
   colorscheme industry
 endif
@@ -102,6 +106,14 @@ set expandtab
 "" Make `<C-A>` increment alphabetic characters
 set nrformats+=alpha
 
+"" Make `/` and `?` ignore case unless mixedCase
+set ignorecase
+set smartcase
+
+"""
+" Key Mappings
+""
+
 "" Kill the help key...
 noremap! <F1> <Nop>
 
@@ -111,15 +123,17 @@ nmap <C-L> <C-W>l
 nmap <C-J> <C-W>j
 nmap <C-K> <C-W>k
 
+"""
+" Leader-key Mappings
+""
+
 "" Press <Leader><ESC> to clear search highlighting until the next search...
 nnoremap <Leader><ESC> :noh<CR>
 
+"" Extend prezto shortcuts to vim...
 nmap <Leader>gws :Gministatus<CR>
 nmap <Leader>gc :Gcommit -v<CR>
 nmap <Leader>gwd :Gdiff<CR>
-
-"" Make `netrw` display in tree mode...
-let g:netrw_liststyle=3
 
 "" Setup autocomplete...
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
