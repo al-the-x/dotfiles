@@ -22,6 +22,7 @@
 	## Much more descriptive, IMO...
 	squash = rebase -i --autosquash
 	conflicts = diff --name-only --diff-filter=U
+	branches = !git for-each-ref --format='%(refname:short)' refs/heads
 
 	## Easier to type...
 	st = status -suno
@@ -34,8 +35,8 @@
 	ll = !LESS=$LESS'S' git log --oneline --graph --decorate
 	la = !LESS=$LESS'S' git log --oneline --graph --decorate --all
 
-	## Like "git superpull" but less to type...
-	pulls = !git pull $@ && git submodule update --init
+	## List branches that have been "squash" merged (or just merged) into `master`...
+	squashed = "!git branches | grep -v master | while read branch; do git diff --quiet --exit-code $branch..master && echo $branch; done"
 
 	## Remove a local AND remote branch, if successfully merged to HEAD...
 	retire = "!f(){ [ ! \"$#\" = \"2\" ] && (echo \"usage: git retire <remote> <branch>\" && exit 1) || (git branch -d $2 && git push --delete $1 $2); } && f"
@@ -44,7 +45,10 @@
 	ignore = "!f(){ for arg in $@; do echo $arg >> .gitignore; done } && f"
 
 	## Find the ref(s) corresponding to HEAD programatically...
-	where = !git symbolic-ref -q HEAD | sed 's|refs/heads/||'
+	where = !git symbolic-ref -q --short HEAD
+
+	## Like "git superpull" but less to type...
+	pulls = !git pull $@ && git submodule update --init
 
 	## Github-related: see https://github.com/github/hub
 	pr = !hub pull-request
@@ -78,3 +82,5 @@
 	prompt = false
 [fetch]
 	prune = true
+[grep]
+	lineNumber = true
