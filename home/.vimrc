@@ -194,3 +194,12 @@ function! ExtractLinks()
     put =LINKS
   endif
 endfunction
+
+try
+  let s:local_rc=system('print $(git-root)/.nvimrc')
+  execute 'source' s:local_rc
+catch
+  if $DEBUG
+    confirm echo 'failed loading' s:local_rc ':' v:exception
+  endif
+endtry
