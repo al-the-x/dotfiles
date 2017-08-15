@@ -102,11 +102,52 @@ function vim-session-branch {
   vim-session "$(git-root)/.vim/$(git-branch-current).vim" $@
 }
 
+function vim-session-retire {
+  typeset -a sessions branches
+
+  SESSION_PATH=${SESSION_PATH:-"$(git-root)/.vim"}
+
+  ## FIXME: convert to array!
+  sessions=( "${(@f)$(print $SESSION_PATH/*.vim(:t))}" )
+
+  branches=( "${(@f)$(git branches)}" )
+
+  [ -n $DEBUG ] && {
+    echo all branches: $branches
+    echo all sessions: $sessions
+  }
+
+  for b in $branches; do
+    sessions[$sessions[(i)"$b.vim"]]=()
+  done
+  echo unmatched sessions \("${#sessions}"\):
+  for (( idx = 1; idx <= ${#sessions}; idx++ )) do
+    echo $sessions[$idx]"\n"
+  done
+
+  read -q \?'Delete these sessions?' && {
+
+    rm ${=sessions}
+  }
+}
+
+##
+# List local branches that aren't `master`, `staging` or `prod` in a manner that
+# they can be piped to `xargs` et al
+##
+function git-branch-list {
+  git for-each-ref --format="%(refname:short)" refs/heads/ | grep -v '^\(master\|sta\?g\|pro\?d\)$'
+}
+
+function git-branch-orphan {
+  git for-each-ref --format="%(refname:short) %(upstream)" refs/heads/ | awk '$2 !~/^refs\/remotes/'
+}
 ##
 # Create a new branch and open a `vim-session-branch` for it
 ##
 function git-branch-session {
-  { git checkout $1 || git checkout -b $1 } && vim-session-branch
+  branch="$1"; shift
+  { git checkout $1 || git checkout -b $1 } && vim-session-branch $@
 }
 
 ##
