@@ -1,3 +1,6 @@
+## Disable scroll lock via `Ctrl-S`
+stty -ixon
+
 alias j='jobs'
 alias .f='dotfiles'
 
