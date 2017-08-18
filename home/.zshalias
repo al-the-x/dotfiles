@@ -51,13 +51,6 @@ function wtf {
 }
 
 
-## Exec the `node` repl with `rlwrap` if available...
-function node {
-  [[ $# -eq 0 ]] && whence rlwrap &> /dev/null && {
-    NODE_NO_READLINE=1 rlwrap node
-  } || node "$@"
-}
-
 ##
 # My primary CASTLE is named `dotfiles`
 ##
