@@ -12,7 +12,6 @@
 [core]
 	## Use a global excludesfile for ignore patterns across repos...
 	excludesfile = ~/.gitexcludes
-	editor = vim
 [color]
 	ui = auto
 [alias]
