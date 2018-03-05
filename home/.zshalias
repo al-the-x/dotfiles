@@ -23,7 +23,7 @@ alias yesterday='gdate -d yesterday -I'
 alias tomorrow='gdate -d tomorrow -I'
 
 alias downcase='tr \[:upper:\] \[:lower:\]'
-alias skewer='tr \[:blank:\] -'
+alias kebab-case='tr \[:blank:\] -'
 
 ## From `brew install hub`
 alias gpr='git pull-request'
