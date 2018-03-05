@@ -1,0 +1,12 @@
+#!/usr/bin/env zsh
+
+function git-dir () {
+  git rev-parse --git-dir
+}
+
+local WORKFILE="$(git-dir)/$$.tags"
+
+trap 'rm -f "$WORKFILE"' EXIT
+git ls-files "$@" \
+  | ctags --tag-relative -L - -f "$WORKFILE" \
+&& mv "$WORKFILE" "${WORKFILE/$$\.}"

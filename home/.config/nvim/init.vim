@@ -75,10 +75,13 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+"" Make tag jumping use cscope files, if possible
+set cscopetag
+
+
 "" Configure `ctrlpvim/ctrlp.vim`
 let g:ctrlp_switch_buffer="ETVH"
-let g:ctrlp_working_path_mode='rca'
-let g:ctrlp_root_markers= ['tags', '.ctrlp']
+let g:ctrlp_working_path_mode='wca'
 
 "" Make `netrw` display in tree mode...
 let g:netrw_liststyle=3

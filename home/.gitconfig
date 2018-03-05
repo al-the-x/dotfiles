@@ -85,3 +85,5 @@
 [grep]
 	lineNumber = true
 	extendedRegexp = true
+[init]
+	templateDir = /home/al_the_x/.git-template
