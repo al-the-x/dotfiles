@@ -14,7 +14,7 @@ alias j='jobs'
 alias .f='dotfiles'
 
 alias vimrc='vim -c "edit $MYVIMRC"'
-alias vims="vim -S"
+alias vims="vim-session-branch"
 alias zshalias="vim ~/.zshalias && source ~/.zshalias"
 alias grepc="grep --color=always"
 
@@ -137,35 +137,49 @@ function vim-session {
 # a directory named `.vim/` at the root of the work-tree.
 ##
 function vim-session-branch {
-  vim-session "$(git-root)/.vim/$(git-branch-current).vim" $@
+  local session="$(git-root)/.vim/$(git-branch-current).vim"
+  mkdir -p ${session:h} && vim-session $session $@
 }
 
-function vim-session-retire {
+function vim-session-expired {
   typeset -a sessions branches
 
   SESSION_PATH=${SESSION_PATH:-"$(git-root)/.vim"}
 
-  ## FIXME: convert to array!
   sessions=( "${(@f)$(print $SESSION_PATH/*.vim(:t))}" )
 
   branches=( "${(@f)$(git branches)}" )
 
-  [ -n $DEBUG ] && {
-    echo all branches: $branches
-    echo all sessions: $sessions
+  [ -n "$DEBUG" ] && {
+    echo all branches: ${=branches}
+    echo all sessions: ${=sessions}
   }
 
   for b in $branches; do
     sessions[$sessions[(i)"$b.vim"]]=()
   done
-  echo unmatched sessions \("${#sessions}"\):
+
+  echo $sessions
+}
+
+function vim-session-retire {
+  typeset -a sessions branches
+
+  [[ $# > 0 ]] && {
+    sessions=( "$@" )
+  } || {
+    sessions=( $(vim-session-expired) )
+  }
+
+  echo "Sessions to delete (${#sessions}):"
   for (( idx = 1; idx <= ${#sessions}; idx++ )) do
-    echo $sessions[$idx]"\n"
+    echo "- ${sessions[$idx]}"
   done
 
   read -q \?'Delete these sessions?' && {
-
-    rm ${=sessions}
+    for (( idx = 1; idx <= ${#sessions}; idx++ )) do
+      rm -f $SESSION_PATH/${sessions[$idx]}
+    done
   }
 }
 
