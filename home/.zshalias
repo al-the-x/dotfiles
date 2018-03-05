@@ -1,3 +1,6 @@
+## Keep history separated by process
+unsetopt SHARED_HISTORY
+
 ## Disable scroll lock via `Ctrl-S`
 stty -ixon
 
