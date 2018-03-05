@@ -84,3 +84,4 @@
 	prune = true
 [grep]
 	lineNumber = true
+	extendedRegexp = true
