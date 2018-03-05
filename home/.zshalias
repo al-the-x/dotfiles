@@ -26,7 +26,8 @@ alias downcase='tr \[:upper:\] \[:lower:\]'
 alias kebab-case='tr \[:blank:\] -'
 
 ## From `brew install hub`
-alias gpr='git pull-request'
+alias gpr='git pull-request -o'
+alias ggo='git browse'
 
 ## From `brew install git extras`
 alias gwi='git ignore'
@@ -36,15 +37,20 @@ alias gbp='git-delete-merged-branches'
 alias gll='git log --graph --pretty=format:"${_git_log_oneline_format}"'
 alias gla='gll --all'
 
-## From `brew install `hub`...
-alias ggo='git browse'
-
 ## Missing from Prezto?
 alias gwm='git mv'
 alias gwM='git mv --force'
 
+## Prezto got this one wrong...
+alias gcf='git commit --amend --no-edit'
+function gpc {
+  git push --set-upstream origin HEAD:${1:-$(git-branch-current 2>/dev/null)}
+}
+unalias gpc
+
 ## Update `master`...
 alias gfu='gf origin master:master'
+alias gri='git rebase --interactive --autosquash'
 
 alias shrug='echo "¯\_(ツ)_/¯"'
 
