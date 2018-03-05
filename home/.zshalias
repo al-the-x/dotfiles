@@ -47,6 +47,23 @@ alias shrug='echo "¯\_(ツ)_/¯"'
 
 ## Application shortcuts...
 
+##
+# Load a directory-specific `.zshrc` if it exists, traversing up to parents,
+# similarly to how `direnv` does but ZSH-specific. Useful for loading aliases
+# and completion specific to a project.
+function load-local-conf {
+  local cwd=$PWD
+
+  while [[ $cwd != $HOME ]]; do
+    [[ -f $cwd/.zshrc ]] && {
+      echo "load-local-conf: $cwd/.zshrc"
+      source $cwd/.zshrc
+    }
+    cwd=$(realpath $cwd/..)
+  done
+}
+add-zsh-hook chpwd load-local-conf
+
 ## Find WTF this command is... with regex!
 ## b/c prezto ships with too many dang aliases to remember them all...
 function wtf {

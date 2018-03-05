@@ -27,3 +27,6 @@ tags
 
 ## Environments defined by `direnv`
 .envrc
+
+## Project-local NeoVim settings
+/.nvimrc
