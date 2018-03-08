@@ -80,6 +80,27 @@ function wtf {
 }
 
 
+## ensure `homeshick` is installed
+function homeshick {
+  local CMD='homeshick'
+
+  if [ -z "$commands[homeshick]" ]; then
+    if [ -z "$commands[homesick]" ]; then
+      echo >&2 'Missing both `homesick` AND `homeshick`!'
+
+      return 1
+    fi
+
+    echo >&2 'Missing `homeshick`, using `homesick` instead; `brew install homeshick` maybe?'
+
+    CMD='homesick'
+  fi
+
+  command "$CMD" $@
+}
+
+alias homesick="homeshick"
+
 ##
 # My primary CASTLE is named `dotfiles`
 ##
@@ -88,14 +109,14 @@ function dotfiles {
     cat >&2 <<'USAGE'
   usage: dotfiles COMMAND [options]
 
-    Proxy for `homesick COMMAND dotfiles [options]`
+    Proxy for `homeshick COMMAND dotfiles [options]`
 USAGE
 
-    homesick --help; return 1
+    homeshick --help; return 1
   }
 
   CMD="$1"; shift
-  homesick $CMD dotfiles $@
+  homeshick $CMD dotfiles $@
 }
 
 function vim {
