@@ -78,7 +78,7 @@ function wtf {
 
 ## ensure `homeshick` is installed
 function homeshick {
-  local CMD='homeshick'
+  local cmd='homeshick'
 
   if [ -z "$commands[homeshick]" ]; then
     if [ -z "$commands[homesick]" ]; then
@@ -89,10 +89,18 @@ function homeshick {
 
     echo >&2 'Missing `homeshick`, using `homesick` instead; `brew install homeshick` maybe?'
 
-    CMD='homesick'
+    cmd='homesick'
   fi
 
-  command "$CMD" $@
+  if [[ $cmd == 'homeshick' && $1 == 'cd' ]]; then
+    [[ $# > 1 ]] && {
+      . cd $HOME/.homesick/repos/$2
+
+      return
+    }
+  fi
+
+  command "$cmd" $@
 }
 
 alias homesick="homeshick"
