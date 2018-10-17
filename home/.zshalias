@@ -37,16 +37,26 @@ alias gbp='git-delete-merged-branches'
 alias gll='git log --graph --pretty=format:"${_git_log_oneline_format}"'
 alias gla='gll --all'
 
+## How far am I from a branch?
+function gln {
+  glo --color "${1:-master}".. | nl -v0
+}
+
 ## Missing from Prezto?
 alias gwm='git mv'
 alias gwM='git mv --force'
 
-## Prezto got this one wrong...
+## Prezto got these wrong...
 alias gcf='git commit --amend --no-edit'
+alias gCe='git mergetool'
 
 ## Update `master`...
 alias gfu='gf origin master:master'
 alias gri='git rebase --interactive --autosquash'
+
+## Make `gpc` more flexible; preserve behavior in `gpC`
+alias gpc='git push --set-upstream'
+alias gpC='git push --set-upstream origin HEAD:$(git-branch-current)'
 
 alias shrug='echo "¯\_(ツ)_/¯"'
 
