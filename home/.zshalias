@@ -60,6 +60,14 @@ alias gpC='git push --set-upstream origin HEAD:$(git-branch-current)'
 
 alias shrug='echo "¯\_(ツ)_/¯"'
 
+function pom {
+  at now + 25 minutes <<COMMANDS
+  notify-send -t 0 'Pomodoro Complete!' "$(date)"
+  zsh -c "repeat 3; do aplay /usr/share/sounds/sound-icons/start; done"
+COMMANDS
+
+}
+
 ## Application shortcuts...
 
 ##
