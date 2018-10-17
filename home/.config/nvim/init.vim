@@ -53,6 +53,7 @@ call vundle#begin()
   Plugin 'mattn/emmet-vim'
   Plugin 'tpope/vim-ragtag'
   Plugin 'kylef/apiblueprint.vim'
+  Plugin 'posva/vim-vue'
 call vundle#end()
 filetype plugin indent on
 
