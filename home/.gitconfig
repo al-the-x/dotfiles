@@ -84,3 +84,7 @@
 [grep]
 	lineNumber = true
 	extendedRegexp = true
+[rerere]
+	enabled = on
+[submodule]
+	recurse = true
