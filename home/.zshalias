@@ -265,7 +265,7 @@ function git-branch-session {
 
 ## GNU coreutils/base64 does not handle the URL-safe variant natively
 function base64url {
-  command -v base64 |& /dev/null || {
+  (command -v gbase64 || command -v base64) >/dev/null || {
     echo >&2 no base64 installed: brew install coreutils
     return 1
   }
@@ -275,7 +275,7 @@ function base64url {
 
 ## Decode JZB (JSON | zlib-flate | base64)
 function jzb-decode {
-  command -v zlib-flate |& /dev/null || {
+  command -v zlib-flate 2>&1 > /dev/null || {
     echo >&2 no zlib-flate installed: brew install zlib
     return 1
   }
