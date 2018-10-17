@@ -14,7 +14,7 @@ alias j='jobs'
 alias .f='dotfiles'
 
 alias vimrc='vim -c "edit $MYVIMRC"'
-alias vims="vim-session-branch"
+alias vims="vim-session-current"
 alias zshalias="vim ~/.zshalias && source ~/.zshalias"
 alias grepc="grep --color=always"
 
@@ -148,22 +148,40 @@ function vim-install {
 # Create a new `vim` session tracked with `:Obsession`
 ##
 function vim-session {
-  SESSION="$1"; shift
+  [ "$#" -lt 1 ] && {
+    echo >&2 'Please supply a session name'
+    exit 1
+  }
+
+  local session="$1"; shift
 
   ##
   # I'm not entirely certain that `vim-obsession` will start tracking just
   # because a session is started, but we'll see...
   ##
-  vim -S "$SESSION" -c "Obsession $SESSION" $@
+  vim -S "$session" -c "Obsession ${session}" $@
+}
+
+##
+# Generate the name of the session file for a given branch, use
+# `git-branch-current` if omitted
+##
+function vim-session-branch {
+  local session="${1:-$(git-branch-current)}"
+
+  echo "$(git-root)/.vim/${session}.vim"
 }
 
 ##
 # Create or open a `vim-session` named like `git-branch-current` and stored in
 # a directory named `.vim/` at the root of the work-tree.
 ##
-function vim-session-branch {
-  local session="$(git-root)/.vim/$(git-branch-current).vim"
-  mkdir -p ${session:h} && vim-session $session $@
+function vim-session-current {
+  local session="$(vim-session-branch)"
+
+  [ -d "${session:h}" ] || mkdir -p "${session:h}"
+
+  vim-session "${session}" $@
 }
 
 function vim-session-expired {
