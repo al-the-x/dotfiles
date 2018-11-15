@@ -76,6 +76,7 @@
 	tool = vimdiff
 [mergetool]
 	prompt = false
+	path = nvim
 [fetch]
 	prune = true
 [grep]
