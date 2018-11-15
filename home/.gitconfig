@@ -83,6 +83,7 @@
 	lineNumber = true
 	extendedRegexp = true
 [rerere]
-	enabled = on
+	enabled = true
+	autoupdate = true
 [submodule]
 	recurse = true
