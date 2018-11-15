@@ -63,6 +63,7 @@
 	user = al-the-x
 [push]
 	default = upstream
+	recurseSubmodules = on-demand
 [include]
 	path = ~/.gitcredentials
 [gitflow "feature.finish"]
