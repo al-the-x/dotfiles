@@ -43,8 +43,8 @@ function gln {
 }
 
 ## Missing from Prezto?
-alias gwm='git mv'
-alias gwM='git mv --force'
+alias gwm='git-move-safe'
+alias gwM='git-move-safe --force'
 
 ## Prezto got these wrong...
 alias gcf='git commit --amend --no-edit'
@@ -255,12 +255,19 @@ function git-branch-list {
 function git-branch-orphan {
   git for-each-ref --format="%(refname:short) %(upstream)" refs/heads/ | awk '$2 !~/^refs\/remotes/'
 }
+
 ##
 # Create a new branch and open a `vim-session-branch` for it
 ##
 function git-branch-session {
   branch="$1"; shift
   { git checkout $1 || git checkout -b $1 } && vim-session-branch $@
+}
+
+function git-move-safe {
+  [[ $# == 2 && -f $1 ]] && mkdir -p "$2:h"
+
+  git mv "$@"
 }
 
 ## GNU coreutils/base64 does not handle the URL-safe variant natively
