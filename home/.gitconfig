@@ -16,7 +16,7 @@
 	ui = auto
 [alias]
 	## Show all configured aliases...
-	aliases = !git config --get-regexp \"alias\\.\"
+	aliases = !git config --get-regexp "alias"
 
 	## Much more descriptive, IMO...
 	squash = rebase -i --autosquash
