@@ -30,10 +30,6 @@
 	co = checkout
 	sq = !git squash
 
-	## Similar to the `lola` aliases out there, but more mnemonic for me:
-	ll = !LESS=$LESS'S' git log --oneline --graph --decorate
-	la = !LESS=$LESS'S' git log --oneline --graph --decorate --all
-
 	## List branches that have been "squash" merged (or just merged) into `master`...
 	squashed = "!git branches | grep -v master | while read branch; do git diff --quiet --exit-code $branch..master && echo $branch; done"
 
