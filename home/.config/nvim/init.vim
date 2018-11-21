@@ -147,6 +147,7 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 
 "" Map extension `.md` to Markdown instead of default...
 autocmd FileType md set filetype=markdown
+autocmd Filetype markdown set wrap linebreak
 
 "" To work with crontab files...
 autocmd FileType crontab set nobackup nowritebackup
