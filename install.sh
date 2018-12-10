@@ -23,7 +23,7 @@ case "$OSTYPE" in
 esac
 
 ## Look for `brew` in all the usual suspects...
-local BREW_LOCATIONS=("/usr/local" "${XDG-HOME:-$HOME}/.linuxbrew" "/home/linuxbrew/.linuxbrew")
+BREW_LOCATIONS=("/usr/local" "${XDG-HOME:-$HOME}/.linuxbrew" "/home/linuxbrew/.linuxbrew")
 for BREW_PATH in $BREW_LOCATIONS; do
   [[ -d "$BREW_PATH" ]] && [[ -x "$BREW_PATH/bin/brew" ]] && {
     eval "$($BREW_PATH/bin/brew shellenv)"
