@@ -11,5 +11,5 @@
 ### To install on a new machine:
 
 ```sh
-$> curl https://raw.githubusercontent.com/al-the-x/dotfiles/master/install.sh | bash
+curl https://raw.githubusercontent.com/al-the-x/dotfiles/master/install.sh | bash
 ```
