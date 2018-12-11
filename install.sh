@@ -76,7 +76,7 @@ $BREW install ruby homeshick
 HOMESHICK="$($BREW --prefix homeshick)/bin/homeshick"
 for repo in 'al-the-x/dotfiles'; do
     $HOMESHICK clone $repo
-    $HOMESHICK link $repo
+    $HOMESHICK link "$(basename $repo)"
 done
 
 ## Install formulae listed in `Brewfile` (linked via `homesick`)
