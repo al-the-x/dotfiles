@@ -75,9 +75,11 @@ $BREW install ruby homeshick
 ## Install and link "castles"...
 HOMESHICK="$($BREW --prefix homeshick)/bin/homeshick"
 for repo in 'al-the-x/dotfiles'; do
-    $HOMESHICK clone $repo
-    $HOMESHICK link "$(basename $repo)"
+    $HOMESHICK clone --batch $repo
 done
+
+## LINK ALL THE THINGS!
+$HOMESHICK link --batch
 
 ## Install formulae listed in `Brewfile` (linked via `homesick`)
 $BREW tap homebrew/bundle && brew bundle --global
