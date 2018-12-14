@@ -1,9 +1,9 @@
 [submodule "home/.zprezto"]
 	path = home/.zprezto
-	url = git://github.com/al-the-x/prezto.git
+	url = https://github.com/al-the-x/prezto.git
 [submodule "home/.tmux/plugins/tpm"]
 	path = home/.tmux/plugins/tpm
-	url = git://github.com/tmux-plugins/tpm.git
+	url = https://github.com/tmux-plugins/tpm.git
 [submodule "home/.vim/bundle/Vundle.vim"]
 	path = home/.vim/bundle/Vundle.vim
-	url = git://github.com/VundleVim/Vundle.vim.git
+	url = https://github.com/VundleVim/Vundle.vim.git
