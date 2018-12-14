@@ -13,18 +13,16 @@ function debug-msg {
 
 ## Look for `brew` in all the usual suspects...
 function find-brew {
-    local location="$(command -v brew 2>/dev/null)"
-    
-    [[ -z "$location" ]] && {
+    command -v brew 2>/dev/null || {
         for location in "/usr/local" "${XDG-HOME:-$HOME}/.linuxbrew" "/home/linuxbrew/.linuxbrew"; do
-          if [[ -d "$location" ]] && [[ -x "$location/bin/brew" ]]; then
+          if [[ -d "$location" && -x "$location/bin/brew" ]]; then
             echo "$location/bin/brew"
             return
           fi
         done
-    }
 
-    echo "$location"
+        return 1
+    }
 }
 
 ## Determine platform (Debian/CentOS/MacOSX/Cygwin) via `$OSTYPE`
