@@ -13,7 +13,7 @@ export _git_log_medium_format='%C(bold)Commit:%C(reset) %C(green)%H%C(red)%d%n%C
 alias j='jobs'
 alias .f='dotfiles'
 
-alias vimrc='vim -c "edit $MYVIMRC"'
+alias vimrc='vim -c "edit \$MYVIMRC"'
 alias vims="vim-session-current"
 alias zshalias="vim ~/.zshalias && source ~/.zshalias"
 alias grepc="grep --color=always"
