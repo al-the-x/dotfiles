@@ -130,6 +130,7 @@ brew "zlib"
 brew "zsh"
 # Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
+cask "amethyst"
 cask "brave-browser"
 cask "dropbox"
 cask "firefox"
