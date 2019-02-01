@@ -4,6 +4,7 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "neovim/neovim"
+tap "nodenv/nodenv"
 # Search tool like grep, but optimized for programmers
 brew "ack"
 # Automatic configure script builder
@@ -92,8 +93,8 @@ brew "moreutils"
 brew "neovim"
 # Platform built on V8 to build network applications
 brew "node"
-# Manage multiple Node.js versions
-brew "nvm"
+# Manage multiple NodeJS versions
+brew "nodenv"
 # OpenBSD freely-licensed SSH connectivity tools
 brew "openssh"
 # Show ps output as a tree
