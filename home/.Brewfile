@@ -93,8 +93,6 @@ brew "neovim"
 brew "node"
 # Manage multiple NodeJS versions
 brew "nodenv"
-# OpenBSD freely-licensed SSH connectivity tools
-brew "openssh"
 # Show ps output as a tree
 brew "pstree"
 # Python version management
