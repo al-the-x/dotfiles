@@ -37,8 +37,6 @@ brew "frotz"
 brew "gettext"
 # GNU awk utility
 brew "gawk"
-# GNU database manager
-brew "gdbm"
 # Command-line utility for uploading Gists
 brew "gist"
 # Distributed revision control system
@@ -99,10 +97,11 @@ brew "nodenv"
 brew "openssh"
 # Show ps output as a tree
 brew "pstree"
+# Python version management
+brew "pyenv"
 # Command-line interface for SQLite
 brew "sqlite"
 # Interpreted, interactive, object-oriented programming language
-brew "python"
 # Reattach process (e.g., tmux) to background
 brew "reattach-to-user-namespace"
 # Readline wrapper: adds readline support to tools that lack it
