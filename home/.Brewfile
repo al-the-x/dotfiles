@@ -25,6 +25,8 @@ brew "dos2unix"
 brew "entr"
 # Banner-like program prints strings as ASCII art
 brew "figlet"
+# Collection of GNU find, xargs, and locate
+brew "findutils", args: ["with-default-names"]
 # Infocom-style interactive fiction player
 brew "frotz"
 # Distributed revision control system
@@ -35,6 +37,8 @@ brew "git-extras"
 brew "git-flow-avh"
 # Git dotfiles synchronizer written in bash
 brew "homeshick"
+# Instant coding answers via the command-line
+brew "howdoi"
 # Add GitHub support to git on the command-line
 brew "hub"
 # Generic library support script
