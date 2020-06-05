@@ -82,6 +82,10 @@
 [grep]
 	lineNumber = true
 	extendedRegexp = true
+[rebase]
+  autoStash = true
+  autoSquash = true
+  stat = true
 [rerere]
 	enabled = true
 	autoupdate = true
