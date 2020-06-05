@@ -16,6 +16,9 @@
 ## Python compiled/optimized
 *.py[co]
 
+## Python MyPy type metadata
+.mypy_cache/
+
 ## Apache metadata (project-level only)
 /.htaccess
 
