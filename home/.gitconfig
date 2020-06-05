@@ -6,9 +6,18 @@
  # @author David Rogers <al.the.x@gmail.com>
  ##
 [user]
-	## Default identification... Remember to change this for work projects!
+	## Default identity for personal projects
 	name = David Rogers
 	email = hello@al-the-x.me
+[github]
+	user = al-the-x
+[committer]
+  ## Defaults to `user`; override locally while pairing!
+  # name = David Rogers
+  # email = hello@al-the-x.me
+[include]
+  ## Identity overrides for work
+	path = ~/.gitcredentials
 [core]
 	## Use a global excludesfile for ignore patterns across repos...
 	excludesfile = ~/.gitexcludes
@@ -50,7 +59,6 @@
 	which = branch --contains
 	wh = branch --contains
 	push-all = push --follow-tags --all
-
 [merge]
 	ff = only
 	## No moar merge bubbles, plz. Kthxbai!
@@ -59,13 +67,9 @@
 	defaultToUpstream = true
 	tool = vimdiff
 	conflictstyle = diff3
-[github]
-	user = al-the-x
 [push]
 	default = upstream
 	recurseSubmodules = on-demand
-[include]
-	path = ~/.gitcredentials
 [gitflow "feature.finish"]
 	keepremote = true
 [gitflow "hotfix.finish"]
