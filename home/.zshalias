@@ -31,7 +31,8 @@ alias ggo='git browse'
 
 ## From `brew install git extras`
 alias gwi='git ignore'
-alias gbp='git-delete-merged-branches'
+alias gbp='git-branch-prune'
+alias gbP='git-delete-merged-branches'
 
 ## Replacing `git ll` and `git la`...
 alias gll='git log --graph --pretty=format:"${_git_log_oneline_format}"'
@@ -257,6 +258,32 @@ function git-branch-list {
 
 function git-branch-orphan {
   git for-each-ref --format="%(refname:short) %(upstream)" refs/heads/ | awk '$2 !~/^refs\/remotes/'
+}
+
+function git-branch-prune {
+  for branch in $(git-branch-list); do
+    echo; echo "Delete branch ${branch}?"
+    select choice in "yes" "no" "exit"; do
+      case $choice in
+        "yes")
+          echo "Removing ${branch}"
+          git branch -d $branch || select confirm in "yes" "no"; do
+            if [[ $confirm == "yes" ]] then git branch -D $branch; fi
+            break
+          done
+          break
+          ;;
+        "no")
+          echo "Skipping ${branch}"
+          break
+          ;;
+        "exit")
+          echo "Exiting"
+          exit
+          ;;
+      esac
+    done
+  done
 }
 
 ##
