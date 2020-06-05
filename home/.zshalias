@@ -401,3 +401,14 @@ function colorize-log {
   colorize magenta '(\d{4}-\d{2}-\d{2}(T| )\d{2}(\:\d{2}){2})' | \
   colorize magenta '(([\w-]+/)*[\w-]+\.\w{,3}(:\d+)?)'
 }
+
+# URL encode Extended ASCII characters ONLY; the Unicode version is complicated.
+#
+# http://www.zsh.org/mla/users/2008/msg01153.html
+# http://www.zsh.org/mla/users/2005/msg01328.html
+function urlencode {
+  setopt localoptions extendedglob
+  input=( ${(s::)1} )
+  print ${(j::)input/(#b)([^A-Za-z0-9_.!~*\'\(\)-])/%${(l:2::0:)$(([##16]#match))}}
+
+}
