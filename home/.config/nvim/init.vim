@@ -6,7 +6,7 @@ call vundle#begin()
   Plugin 'flazz/vim-colorschemes'
   Plugin 'tpope/vim-sensible'
   Plugin 'tpope/vim-dispatch'
-  " Plugin 'editorconfig/editorconfig-vim'
+  Plugin 'editorconfig/editorconfig-vim'
   Plugin 'tpope/vim-commentary'
   Plugin 'tpope/vim-repeat'
   Plugin 'tpope/vim-surround'
@@ -20,8 +20,7 @@ call vundle#begin()
 
   "" Use `git` from within `vim`
   Plugin 'tpope/vim-fugitive'
-  " Plugin 'airblade/vim-gitgutter'
-  " Plugin 'alexdavid/vim-min-git-status'
+  Plugin 'airblade/vim-gitgutter'
   Plugin 'tpope/vim-rhubarb'
 
   "" Buffer and file management
@@ -48,7 +47,7 @@ call vundle#end()
 filetype plugin indent on
 
 "" Configure `statusline` with help from `tpope/fugitive`
-set statusline=%<%f\ %h%m%r[%{fugitive#head()}]%=%-14.(%l,%c%V%)\ %P
+set statusline=%<%f\ %{ObsessionStatus('►','✖︎')}\ %h%m%r[%{fugitive#head()}]%=%-14.(%l,%c%V%)\ %P
 
 "" Configure `ctrlpvim/ctrlp.vim`
 let g:ctrlp_switch_buffer="ETVH"
