@@ -1,5 +1,3 @@
-"" Make sessions play nice with Pathogen et al
-set sessionoptions-=options
 
 "" Load and enable Pathogen
 " runtime bundle/vim-pathogen/autoload/pathogen.vim
@@ -12,12 +10,12 @@ call vundle#begin()
   "" General utilities
   Plugin 'flazz/vim-colorschemes'
   Plugin 'tpope/vim-sensible'
-  Plugin 'google/vim-maktaba'
-  Plugin 'google/vim-codefmt'
-  Plugin 'google/vim-coverage'
-  Plugin 'google/vim-glaive'
+  " Plugin 'google/vim-maktaba'
+  " Plugin 'google/vim-codefmt'
+  " Plugin 'google/vim-coverage'
+  " Plugin 'google/vim-glaive'
   Plugin 'tpope/vim-dispatch'
-  Plugin 'editorconfig/editorconfig-vim'
+  " Plugin 'editorconfig/editorconfig-vim'
   Plugin 'tpope/vim-commentary'
   Plugin 'tpope/vim-repeat'
   Plugin 'tpope/vim-surround'
@@ -31,8 +29,8 @@ call vundle#begin()
 
   "" Use `git` from within `vim`
   Plugin 'tpope/vim-fugitive'
-  Plugin 'airblade/vim-gitgutter'
-  Plugin 'alexdavid/vim-min-git-status'
+  " Plugin 'airblade/vim-gitgutter'
+  " Plugin 'alexdavid/vim-min-git-status'
   Plugin 'tpope/vim-rhubarb'
 
   "" Buffer and file management
@@ -40,41 +38,42 @@ call vundle#begin()
   Plugin 'ctrlpvim/ctrlp.vim'
   Plugin 'tpope/vim-obsession'
 
-  "" Syntax-checking and highlighting...
-  Plugin 'scrooloose/syntastic'
+  " "" Syntax-checking and highlighting...
+  " Plugin 'scrooloose/syntastic'
+  Plugin 'w0rp/ale'
 
-  Plugin 'burnettk/vim-angular'
+  " Plugin 'burnettk/vim-angular'
   Plugin 'pangloss/vim-javascript'
-  Plugin 'fatih/vim-go'
-  Plugin 'digitaltoad/vim-pug'
-  Plugin 'tmux-plugins/vim-tmux'
+  " Plugin 'fatih/vim-go'
+  " Plugin 'digitaltoad/vim-pug'
+  " Plugin 'tmux-plugins/vim-tmux'
   Plugin 'tpope/vim-eunuch'
   Plugin 'tpope/vim-markdown'
   Plugin 'mattn/emmet-vim'
   Plugin 'tpope/vim-ragtag'
-  Plugin 'kylef/apiblueprint.vim'
+  " Plugin 'kylef/apiblueprint.vim'
   Plugin 'posva/vim-vue'
 call vundle#end()
 filetype plugin indent on
 
 "" Configure Glaive-enabled plugins
-call glaive#Install()
-Glaive codefmt plugin[mappings]
+" call glaive#Install()
+" Glaive codefmt plugin[mappings]
 
 "" Configure `statusline` with help from `tpope/fugitive`
 set statusline=%<%f\ %h%m%r[%{fugitive#head()}]%=%-14.(%l,%c%V%)\ %P
 
-"" Configure `scrooloose/syntastic`
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers=['eslint']
+" "" Configure `scrooloose/syntastic`
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 0
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_javascript_checkers=['eslint']
 
-"" Add Syntastic to `statusline`
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" "" Add Syntastic to `statusline`
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
 "" Configure `ctrlpvim/ctrlp.vim`
 let g:ctrlp_switch_buffer="ETVH"
