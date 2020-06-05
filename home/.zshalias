@@ -39,7 +39,10 @@ alias gla='gll --all'
 
 ## How far am I from a branch?
 function gln {
-  glo --color "${1:-master}".. | nl -v0
+  local base="${1:-master}"; [ $# -gt 0 ] && shift
+  local head="${1:-HEAD}"; [ $# -gt 0 ] && shift
+
+  glo --color "$base".."$head" $@ | nl -v0
 }
 
 ## Missing from Prezto?
