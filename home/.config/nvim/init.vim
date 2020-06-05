@@ -1,8 +1,3 @@
-
-"" Load and enable Pathogen
-" runtime bundle/vim-pathogen/autoload/pathogen.vim
-" call pathogen#infect()
-
 se rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
   Plugin 'VundleVim/Vundle.vim'
@@ -10,10 +5,6 @@ call vundle#begin()
   "" General utilities
   Plugin 'flazz/vim-colorschemes'
   Plugin 'tpope/vim-sensible'
-  " Plugin 'google/vim-maktaba'
-  " Plugin 'google/vim-codefmt'
-  " Plugin 'google/vim-coverage'
-  " Plugin 'google/vim-glaive'
   Plugin 'tpope/vim-dispatch'
   " Plugin 'editorconfig/editorconfig-vim'
   Plugin 'tpope/vim-commentary'
@@ -55,10 +46,6 @@ call vundle#begin()
   Plugin 'posva/vim-vue'
 call vundle#end()
 filetype plugin indent on
-
-"" Configure Glaive-enabled plugins
-" call glaive#Install()
-" Glaive codefmt plugin[mappings]
 
 "" Configure `statusline` with help from `tpope/fugitive`
 set statusline=%<%f\ %h%m%r[%{fugitive#head()}]%=%-14.(%l,%c%V%)\ %P
