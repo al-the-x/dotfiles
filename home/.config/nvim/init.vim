@@ -59,8 +59,7 @@ let g:netrw_liststyle=3
 
 syntax on
 
-colorscheme desert
-set background=light
+colorscheme desertink
 if &diff
   colorscheme industry
 endif
@@ -90,12 +89,6 @@ set smartcase
 
 "" Kill the help key...
 noremap! <F1> <Nop>
-
-"" Faster panel switching...
-nmap <C-H> <C-W>h
-nmap <C-L> <C-W>l
-nmap <C-J> <C-W>j
-nmap <C-K> <C-W>k
 
 """
 " Leader-key Mappings
