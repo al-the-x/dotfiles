@@ -10,12 +10,12 @@ import sys
 
 for word in sys.argv[1:]:
     try:
-        help(word) # simplest case
-    except NameError: # not a builtin or global
+        help(word)  # simplest case
+    except NameError:  # not a builtin or global
         try:
             try:
                 __import__(word)
-            except ImportError: # not a module...
+            except ImportError:  # not a module...
                 module, _ = word.rsplit('.', 1)
                 __import__(module)
 
@@ -23,4 +23,4 @@ for word in sys.argv[1:]:
         except ImportError:
             print('Cannot find "%s" to import!' % word)
 else:
-    print __doc__
+    print(__doc__)
