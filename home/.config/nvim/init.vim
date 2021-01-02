@@ -1,8 +1,11 @@
+"" Must be set before ALE is loaded
+let g:ale_completion_enabled=1
+
 se rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
   Plugin 'VundleVim/Vundle.vim'
 
-  "" General utilities
+  """ General utilities
   Plugin 'flazz/vim-colorschemes'
   Plugin 'tpope/vim-sensible'
   Plugin 'tpope/vim-dispatch'
@@ -23,14 +26,15 @@ call vundle#begin()
   Plugin 'airblade/vim-gitgutter'
   Plugin 'tpope/vim-rhubarb'
 
-  "" Buffer and file management
+  """ Buffer and file management
   Plugin 'artnez/vim-wipeout'
   Plugin 'ctrlpvim/ctrlp.vim'
   Plugin 'tpope/vim-obsession'
 
   " "" Syntax-checking and highlighting...
-  Plugin 'w0rp/ale'
+  Plugin 'dense-analysis/ale'
 
+  """ Language support:
   " Plugin 'burnettk/vim-angular'
   Plugin 'pangloss/vim-javascript'
   " Plugin 'fatih/vim-go'
@@ -105,11 +109,21 @@ nmap <Leader>gwd :Gdiff<CR>
 "" Setup autocomplete...
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType ruby set omnifunc=rubycomplete#Complete
-autocmd FileType python set omnifunc=pythoncomplete#Complete
+ autocmd FileType python set omnifunc=ale#completion#OmniFunc
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+
+let g:ale_fixers={
+\ '*': ['remove_trailing_lines', 'trim_whitespace'],
+\ 'python': ['isort', 'black'],
+\ 'javascript': ['eslint', 'prettier'],
+\}
+let g:ale_fix_on_save=1
+
+"" TODO: Move to `ftplugin/python.py`
+let g:ale_completion_autoimport=1
 
 "" Map extension `.md` to Markdown instead of default...
 autocmd FileType md set filetype=markdown
