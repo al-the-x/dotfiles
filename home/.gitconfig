@@ -83,6 +83,7 @@
 	path = nvim
 [fetch]
 	prune = true
+	pruneTags = true
 [grep]
 	lineNumber = true
 	extendedRegexp = true
@@ -95,3 +96,6 @@
 	autoupdate = true
 [submodule]
 	recurse = true
+[pull]
+  rebase = true
+  ff = only
