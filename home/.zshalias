@@ -15,6 +15,7 @@ alias .f='dotfiles'
 
 alias vimrc='vim -c "edit \$MYVIMRC"'
 alias vims="vim-session-current"
+alias vimc="pbp | vipe | pbc"
 alias zshalias="vim ~/.zshalias && source ~/.zshalias"
 alias grepc="grep --color=always"
 
