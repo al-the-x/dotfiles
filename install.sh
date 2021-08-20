@@ -80,7 +80,7 @@ done
 $HOMESHICK link --batch
 
 ## Install formulae listed in `Brewfile` (linked via `homesick`)
-$BREW tap homebrew/bundle && brew bundle --global
+$BREW tap homebrew/bundle && $BREW bundle --global
 
 ## TODO: Install global npm packages
 ## TODO: Install global python packages
