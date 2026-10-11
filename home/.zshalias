@@ -280,7 +280,7 @@ function git-branch-prune {
           ;;
         "exit")
           echo "Exiting"
-          exit
+          return
           ;;
       esac
     done

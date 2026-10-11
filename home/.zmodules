@@ -30,4 +30,3 @@ zstyle ':prezto:load' pmodule \
 	'completion' \
 	'syntax-highlighting' \
 	'prompt' ## Always last!
-

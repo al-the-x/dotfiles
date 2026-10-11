@@ -99,3 +99,7 @@
 [pull]
   rebase = true
   ff = only
+[credential "https://github.com"]
+	helper = !/$(brew --prefix gh)/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = !$(brew --prefix gh)/gh auth git-credential
